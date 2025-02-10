@@ -42,7 +42,7 @@ const Index = () => {
               </div>
               <div className="space-y-4">
                 <h2 className="text-4xl font-bold bg-gradient-to-r from-[#F97316] via-[#8B5CF6] to-[#0EA5E9] text-transparent bg-clip-text animate-[pulse_2s_ease-in-out_infinite]">
-                  Power Up Complete!
+                  Upgrade Complete!
                 </h2>
                 <p className="text-[#E5DEFF] text-lg">
                   Your tokens have ascended to the Zilliqa Network ✨
