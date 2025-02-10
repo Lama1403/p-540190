@@ -38,6 +38,12 @@ export const Navbar = () => {
             smallScreen: false,
             largeScreen: true,
           }}
+          accountStatus="address"
+          theme={{
+            connectButtonBackground: '#9b87f5',
+            borderRadius: '127.434px',
+            accentColor: '#9b87f5',
+          }}
         />
       </div>
     </nav>
