@@ -55,7 +55,7 @@ const Index = () => {
                   <Sparkles className="w-8 h-8 text-[#F97316] animate-[bounce_2s_infinite]" />
                 </div>
                 <div className="absolute -bottom-4 -left-4">
-                  <svg width="1440" height="73" viewBox="0 0 1440 73" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-[#0EA5E9] animate-[bounce_2s_infinite_0.5s]">
+                  <svg width="32" height="32" viewBox="0 0 1440 73" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-[#0EA5E9] animate-[bounce_2s_infinite_0.5s]">
                     <mask id="path-1-inside-1_81_2163" fill="white">
                       <path d="M0 0H1440V72.3978H0V0Z"/>
                     </mask>
