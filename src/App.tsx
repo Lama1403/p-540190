@@ -14,10 +14,9 @@ import { config, chains } from './config/wagmi';
 const queryClient = new QueryClient();
 
 const App = () => (
-  // Temporarily disabled RainbowKit integration
-  // <WagmiProvider config={config}>
+  <WagmiProvider config={config}>
     <QueryClientProvider client={queryClient}>
-      {/* <RainbowKitProvider
+      <RainbowKitProvider
         theme={darkTheme({
           accentColor: '#00D0C6',
           accentColorForeground: 'white',
@@ -27,7 +26,7 @@ const App = () => (
         })}
         chains={chains}
         modalSize="compact"
-      > */}
+      >
         <TooltipProvider>
           <Toaster />
           <Sonner />
@@ -38,9 +37,10 @@ const App = () => (
             </Routes>
           </BrowserRouter>
         </TooltipProvider>
-      {/* </RainbowKitProvider> */}
+      </RainbowKitProvider>
     </QueryClientProvider>
-  // </WagmiProvider>
+  </WagmiProvider>
 );
 
 export default App;
+
