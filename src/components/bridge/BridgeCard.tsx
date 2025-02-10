@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ChevronRight } from "lucide-react";
 import { StyledCard } from "@/components/ui/styled-card";
@@ -86,27 +85,24 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
       
       <Tooltip>
         <TooltipTrigger asChild>
-          <div className="w-full transition-all duration-300 rounded-[15px] group">
-            <div className="relative p-[1px] rounded-[15px] group-hover:shadow-[0_0_30px_rgba(0,208,198,0.15),0_0_15px_rgba(0,208,198,0.1),0_0_45px_rgba(82,46,255,0.15)]">
-              <div className="absolute inset-0 rounded-[15px] bg-gradient-to-r from-[#00D0C6] to-[#522EFF] opacity-0 group-hover:opacity-100 animate-[gradient_6s_ease_infinite] group-hover:bg-[length:200%_200%]" />
-              <div className="relative bg-[#1E1D1D]/80 rounded-[15px]">
-                <div className="flex flex-row items-start justify-between w-full h-[16px] px-[10px]">
-                  <div className="flex flex-row items-center gap-[5px]">
-                    <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-[#C2C2C2]">
-                      From
-                    </span>
-                    <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-white">
-                      0xD81...C5af2
-                    </span>
-                  </div>
-                  <div className="flex flex-row items-center gap-[5px]">
-                    <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-[#C2C2C2]">
-                      To
-                    </span>
-                    <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-white">
-                      zil1...4a9p
-                    </span>
-                  </div>
+          <div className="w-full transition-all duration-300 rounded-[15px]">
+            <div className="relative bg-[#1E1D1D]/80 rounded-[15px]">
+              <div className="flex flex-row items-start justify-between w-full h-[16px] px-[10px]">
+                <div className="flex flex-row items-center gap-[5px]">
+                  <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-[#C2C2C2]">
+                    From
+                  </span>
+                  <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-white">
+                    0xD81...C5af2
+                  </span>
+                </div>
+                <div className="flex flex-row items-center gap-[5px]">
+                  <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-[#C2C2C2]">
+                    To
+                  </span>
+                  <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-white">
+                    zil1...4a9p
+                  </span>
                 </div>
               </div>
             </div>
@@ -212,4 +208,3 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
     </StyledCard>
   );
 };
-
