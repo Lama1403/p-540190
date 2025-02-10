@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { StyledCard } from "@/components/ui/styled-card";
 import { StyledButton } from "@/components/ui/styled-button";
@@ -144,4 +143,3 @@ export const BridgeCard: React.FC<{
     </StyledCard>
   );
 };
-

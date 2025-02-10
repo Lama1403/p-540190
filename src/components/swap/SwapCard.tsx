@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { StyledCard } from "@/components/ui/styled-card";
 import { CardHeader } from "@/components/shared/CardHeader";
@@ -25,7 +26,7 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
       title: "✨ Swap Initiated",
       description: "Converting Interim ZIL to Bridged ERC-20 ZIL...",
       variant: "default",
-      className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-fade-in",
+      className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-fade-in w-[90vw] sm:w-auto mx-auto sm:mx-0",
       duration: 3000,
     });
 
@@ -36,7 +37,7 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
         title: "🔄 Processing",
         description: "Transaction in progress...",
         variant: "default",
-        className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-fade-in",
+        className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-fade-in w-[90vw] sm:w-auto mx-auto sm:mx-0",
         duration: 2000,
       });
 
@@ -47,7 +48,7 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
           title: "✅ Swap Complete",
           description: "You can now proceed to bridge your tokens",
           variant: "default",
-          className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-fade-in",
+          className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-fade-in w-[90vw] sm:w-auto mx-auto sm:mx-0",
           duration: 4000,
         });
         onSwapComplete?.();
