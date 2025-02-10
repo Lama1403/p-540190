@@ -8,7 +8,7 @@ interface WalletInfoProps {
 
 export const WalletInfo: React.FC<WalletInfoProps> = ({ address, balance }) => {
   return (
-    <div className="flex flex-row justify-between items-center p-[17px] gap-[8px] w-full h-[64px] min-h-[48px] bg-[#1E1D1D]/40 backdrop-blur-lg shadow-2xl rounded-[15px]">
+    <div className="flex flex-row justify-between items-center p-[17px] gap-[8px] w-full h-[64px] min-h-[48px] bg-[#1E1D1D]/80 backdrop-blur-lg shadow-2xl rounded-[15px]">
       <div className="flex flex-row items-center gap-[15px] w-full">
         <div className="flex flex-row items-center gap-[5px]">
           <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-[#C2C2C2]">
