@@ -28,7 +28,7 @@ export const AmountInput: React.FC<AmountInputProps> = ({
         <div className={`w-full transition-all duration-300 rounded-[15px] group ${disabled ? 'opacity-50 pointer-events-none' : ''}`}>
           <div className="relative p-[1px] rounded-[15px] group-hover:shadow-[0_0_30px_rgba(0,208,198,0.15),0_0_15px_rgba(0,208,198,0.1),0_0_45px_rgba(82,46,255,0.15)]">
             <div 
-              className={`absolute inset-0 rounded-[15px] opacity-0 group-hover:opacity-100 animate-[gradient_50s_ease-in-out_infinite] group-hover:bg-[length:200%_200%] transition-all duration-[1500ms]
+              className={`absolute inset-0 rounded-[15px] opacity-0 group-hover:opacity-100 animate-[gradient_30s_ease-in-out_infinite] group-hover:bg-[length:200%_200%] transition-all duration-[1500ms]
                 ${error ? 'bg-gradient-to-r from-[#ea384c] to-[#ff6b6b]' :
                   activeButton === 'max' ? 'bg-gradient-to-r from-[#00D0C6] to-[#00B8AF]' : 
                   activeButton === 'min' ? 'bg-gradient-to-r from-[#2B2970] to-[#522EFF]' : 
