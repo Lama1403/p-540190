@@ -5,10 +5,12 @@ import { StyledCard } from "@/components/ui/styled-card";
 import { StyledButton } from "@/components/ui/styled-button";
 import { InputLabelButton } from "@/components/ui/input-label-button";
 import { BridgeHeader } from "./BridgeHeader";
+import { useToast } from "@/hooks/use-toast";
 
 export const BridgeCard: React.FC = () => {
   const [amount, setAmount] = useState<string>('');
   const maxAmount = 1000;
+  const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -19,10 +21,41 @@ export const BridgeCard: React.FC = () => {
 
   const handleMaxClick = () => {
     setAmount(maxAmount.toString());
+    toast({
+      title: "Maximum Amount Set",
+      description: `Set to maximum available: ${maxAmount} ZIL`,
+      variant: "default",
+      className: "bg-[#1A1F2C] text-white border-[#2C9297] animate-fade-in",
+    });
   };
 
   const handleHalfClick = () => {
     setAmount((maxAmount / 2).toString());
+    toast({
+      title: "Half Amount Set",
+      description: `Set to half of maximum: ${maxAmount / 2} ZIL`,
+      variant: "default",
+      className: "bg-[#1A1F2C] text-white border-[#2C9297] animate-fade-in",
+    });
+  };
+
+  const handleBridge = () => {
+    if (!amount) {
+      toast({
+        title: "Error",
+        description: "Please enter an amount to bridge",
+        variant: "destructive",
+        className: "bg-[#1A1F2C] text-[#ea384c] border-[#ea384c] animate-fade-in",
+      });
+      return;
+    }
+    
+    toast({
+      title: "Bridge Initiated",
+      description: `Bridging ${amount} ZIL to Zilliqa Network...`,
+      variant: "default",
+      className: "bg-[#1A1F2C] text-white border-[#2C9297] animate-fade-in",
+    });
   };
 
   return (
@@ -99,7 +132,7 @@ export const BridgeCard: React.FC = () => {
         </div>
       </div>
 
-      <StyledButton variant="primary">
+      <StyledButton variant="primary" onClick={handleBridge}>
         Bridge
       </StyledButton>
     </StyledCard>

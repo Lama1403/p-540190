@@ -6,8 +6,20 @@ import { WalletInfo } from "./WalletInfo";
 import { TokenSelector } from "./TokenSelector";
 import { NetworkSelector } from "./NetworkSelector";
 import { StyledButton } from "@/components/ui/styled-button";
+import { useToast } from "@/hooks/use-toast";
 
 export const SwapCard: React.FC = () => {
+  const { toast } = useToast();
+
+  const handleSwap = () => {
+    toast({
+      title: "Swap Initiated",
+      description: "Converting Interim ZIL to Bridged ERC-20 ZIL...",
+      variant: "default",
+      className: "bg-[#1A1F2C] text-white border-[#2C9297] animate-fade-in",
+    });
+  };
+
   return (
     <StyledCard>
       <SwapHeader 
@@ -33,7 +45,7 @@ export const SwapCard: React.FC = () => {
         />
       </div>
       
-      <StyledButton variant="primary">
+      <StyledButton variant="primary" onClick={handleSwap}>
         Swap
       </StyledButton>
     </StyledCard>
