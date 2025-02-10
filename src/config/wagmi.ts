@@ -12,13 +12,15 @@ const { connectors } = getDefaultWallets({
   chains: [mainnet, sepolia],
 });
 
+const chains = [mainnet, sepolia] as const;
+
 export const config = createConfig({
-  chains: [mainnet, sepolia],
+  chains,
+  connectors,
   transports: {
     [mainnet.id]: http('https://eth-mainnet.g.alchemy.com/v2/demo'),
     [sepolia.id]: http('https://eth-sepolia.g.alchemy.com/v2/demo'),
   },
-  connectors,
 });
 
-export const chains = [mainnet, sepolia];
+export { chains };
