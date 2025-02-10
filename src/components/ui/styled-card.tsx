@@ -16,7 +16,7 @@ export const StyledCard: React.FC<StyledCardProps> = ({
   return (
     <Card 
       className={cn(
-        "w-full max-w-[474.86px] bg-[rgba(30,29,29,0.5)] shadow-lg rounded-[15px] p-[35px] border-0",
+        "w-full max-w-[474.86px] bg-[rgba(30,29,29,0.5)] shadow-lg rounded-[15px] md:p-[35px] p-[17.5px] border-0",
         className
       )}
       {...props}
