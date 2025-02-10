@@ -64,13 +64,15 @@ export const BridgeCard: React.FC = () => {
 
         {/* Input Section */}
         <div className="flex flex-row justify-between items-center p-[15px] w-full h-[97.49px] bg-gradient-to-r from-[rgba(78,78,78,0.3)] via-[rgba(32,40,50,0.25)] to-[rgba(78,78,78,0.3)] rounded-[15px]">
-          <div className="flex flex-row justify-between items-center w-full">
-            <input 
-              type="text"
-              className="bg-transparent font-['Montserrat'] font-bold text-[33px] leading-[120%] tracking-[-0.02em] text-white w-[314.48px] focus:outline-none"
-              placeholder="0.0"
-            />
-            <div className="flex flex-col gap-[11px]">
+          <div className="flex flex-row justify-between items-center w-full h-full">
+            <div className="flex-1 mr-4">
+              <input 
+                type="text"
+                className="bg-transparent font-['Montserrat'] font-bold text-[33px] leading-[120%] tracking-[-0.02em] text-white w-full focus:outline-none"
+                placeholder="0.0"
+              />
+            </div>
+            <div className="flex flex-col gap-[11px] h-full justify-center">
               <button className="w-[60.38px] h-[28.24px] bg-[#2B2970] rounded-[78.5256px] font-['Montserrat'] font-bold text-[10.3036px] leading-[120%] text-[#87A1FF] capitalize">
                 Max
               </button>
