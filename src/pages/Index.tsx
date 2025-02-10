@@ -16,18 +16,10 @@ const Index = () => {
     <Background>
       <CustomNavbar />
       <main 
-        style={{
-          width: "100%",
-          minHeight: "calc(100vh - 72.4px)", // Subtract navbar height
-          padding: "1rem",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "2rem"
-        }}
+        className={`w-full min-h-[calc(100vh-72.4px)] p-4 flex flex-col items-center gap-8 relative ${isBridgeCompleted ? 'backdrop-blur-md bg-white/5' : ''}`}
       >
         {isBridgeCompleted && (
-          <div className="fixed inset-0 bg-gradient-to-br from-purple-900/90 via-black/80 to-blue-900/90 backdrop-blur-sm z-50 flex items-center justify-center animate-fade-in">
+          <div className="fixed inset-0 bg-gradient-to-br from-purple-900/60 via-black/50 to-blue-900/60 backdrop-blur-sm z-50 flex items-center justify-center animate-fade-in">
             <div className="text-center space-y-8 animate-scale-in">
               <div className="relative">
                 <div className="w-24 h-24 rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#D946EF] flex items-center justify-center mx-auto animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]">
@@ -54,13 +46,14 @@ const Index = () => {
         <PageHeader 
           title="Swap & Bridge"
           description="Swap your tokens and bridge them to another network seamlessly"
+          className="backdrop-blur-sm bg-white/5 rounded-xl p-4"
         />
         <div className="flex items-center justify-center gap-8 flex-wrap w-full">
           <TooltipProvider delayDuration={0}>
-            <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 relative ${isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''}`}>
+            <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 relative backdrop-blur-sm bg-white/5 rounded-xl ${isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''}`}>
               <SwapCard onSwapComplete={() => setIsSwapCompleted(true)} isCompleted={isSwapCompleted} />
             </div>
-            <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 relative ${!isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''} ${isBridgeCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''}`}>
+            <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 relative backdrop-blur-sm bg-white/5 rounded-xl ${!isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''} ${isBridgeCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''}`}>
               <BridgeCard 
                 isDisabled={!isSwapCompleted} 
                 onBridgeComplete={() => setIsBridgeCompleted(true)}
