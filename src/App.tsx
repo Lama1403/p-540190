@@ -6,20 +6,34 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import { getDefaultWallets, RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
+import { connectorsForWallets, RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
 import { createConfig, WagmiConfig, http } from 'wagmi';
 import { mainnet } from 'wagmi/chains';
 import '@rainbow-me/rainbowkit/styles.css';
+import {
+  injectedWallet,
+  rainbowWallet,
+  walletConnectWallet,
+  coinbaseWallet,
+  metaMaskWallet,
+} from '@rainbow-me/rainbowkit/wallets';
 
 const queryClient = new QueryClient();
 
-const projectId = 'YOUR_PROJECT_ID'; // Replace with your WalletConnect project ID
+const projectId = 'YOUR_PROJECT_ID'; // We'll handle this securely based on your preference
 
-const { wallets } = getDefaultWallets({
-  appName: 'Upgrade App',
-  projectId,
-  chains: [mainnet],
-});
+const connectors = connectorsForWallets([
+  {
+    groupName: 'Recommended',
+    wallets: [
+      injectedWallet,
+      rainbowWallet,
+      walletConnectWallet,
+      coinbaseWallet,
+      metaMaskWallet,
+    ],
+  },
+], { projectId });
 
 // Create wagmi config
 const config = createConfig({
@@ -27,7 +41,7 @@ const config = createConfig({
   transports: {
     [mainnet.id]: http(),
   },
-  connectors: wallets.map(({ wallets }) => wallets).flat(),
+  connectors: connectors,
 });
 
 const App = () => (
@@ -38,6 +52,7 @@ const App = () => (
           accentColor: '#00D0C6',
           borderRadius: 'medium',
         })}
+        chains={[mainnet]}
       >
         <TooltipProvider>
           <Toaster />
