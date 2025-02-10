@@ -27,7 +27,7 @@ const { connectors } = getDefaultWallets({
 const wagmiConfig = createConfig({
   chains: [mainnet],
   transports: {
-    [mainnet.id]: http('https://eth-mainnet.g.alchemy.com/v2/demo'),
+    [mainnet.id]: http('https://eth-rpc.gateway.pokt.network'),
   },
   connectors,
 });
