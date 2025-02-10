@@ -24,7 +24,7 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
       title: "✨ Swap Initiated",
       description: "Converting Interim ZIL to Bridged ERC-20 ZIL...",
       variant: "default",
-      className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-xl shadow-2xl animate-fade-in",
+      className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-fade-in",
       duration: 3000,
     });
 
@@ -34,7 +34,7 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
         title: "🔄 Processing",
         description: "Transaction in progress...",
         variant: "default",
-        className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-xl shadow-2xl animate-fade-in",
+        className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-fade-in",
         duration: 2000,
       });
 
@@ -44,7 +44,7 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
           title: "✅ Swap Complete",
           description: "You can now proceed to bridge your tokens",
           variant: "default",
-          className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-xl shadow-2xl animate-fade-in",
+          className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-fade-in",
           duration: 3000,
         });
         onSwapComplete?.();
@@ -81,7 +81,7 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
           <TooltipContent 
             side="top" 
             align="center" 
-            className="bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-xl shadow-2xl max-w-[200px] break-words whitespace-normal"
+            className="bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl max-w-[200px] break-words whitespace-normal"
             sideOffset={5}
           >
             <p className="text-sm">Your connected wallet address and current balance</p>
@@ -105,7 +105,7 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
           <TooltipContent 
             side="top" 
             align="center" 
-            className="bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-xl shadow-2xl max-w-[200px] break-words whitespace-normal"
+            className="bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl max-w-[200px] break-words whitespace-normal"
             sideOffset={5}
           >
             <p className="text-sm">Convert your Interim ZIL tokens to Bridged ERC-20 ZIL (eZIL)</p>
@@ -128,7 +128,7 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
           <TooltipContent 
             side="top" 
             align="center" 
-            className="bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-xl shadow-2xl max-w-[200px] break-words whitespace-normal"
+            className="bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl max-w-[200px] break-words whitespace-normal"
             sideOffset={5}
           >
             <p className="text-sm">The network where your tokens will be swapped</p>
@@ -143,7 +143,7 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
         className={`relative transition-all duration-300 ${
           isCompleted 
             ? "bg-gradient-to-r from-[#00D0C6] to-[#0EA5E9] border-[#0EA5E9] cursor-not-allowed shadow-lg hover:shadow-xl hover:scale-[1.02] animate-fade-in" 
-            : "bg-[#1E1D1D] border border-transparent hover:border-transparent hover:shadow-[0_0_30px_rgba(0,208,198,0.15),0_0_15px_rgba(0,208,198,0.1),0_0_45px_rgba(14,165,233,0.15)] before:absolute before:inset-[1px] before:rounded-[14px] before:bg-[#1E1D1D] before:z-[1] after:absolute after:inset-0 after:rounded-[15px] after:bg-[length:400%_400%] after:bg-gradient-to-r after:from-[#00D0C6] after:via-[#0FA0CE]/90 after:via-[#1EAEDB]/80 after:to-[#0EA5E9] after:opacity-0 hover:after:opacity-100 after:transition-opacity after:animate-[gradient_6s_ease_infinite]"
+            : "bg-[#1E1D1D] border border-transparent hover:border-transparent hover:shadow-[0_0_30px_rgba(0,208,198,0.15),0_0_15px_rgba(0,208,198,0.1),0_0_45px_rgba(14,165,233,0.15)] before:absolute before:inset-[1px] before:rounded-[15px] before:bg-[#1E1D1D] before:z-[1] after:absolute after:inset-0 after:rounded-[15px] after:bg-[length:400%_400%] after:bg-gradient-to-r after:from-[#00D0C6] after:via-[#0FA0CE]/90 after:via-[#1EAEDB]/80 after:to-[#0EA5E9] after:opacity-0 hover:after:opacity-100 after:transition-opacity after:animate-[gradient_6s_ease_infinite]"
         }`}
       >
         <span className="relative z-[2]">
@@ -160,3 +160,4 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
     </StyledCard>
   );
 };
+
