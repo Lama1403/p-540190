@@ -30,10 +30,10 @@ const Index = () => {
         />
         <div className="flex items-center justify-center gap-8 flex-wrap w-full">
           <TooltipProvider delayDuration={0}>
-            <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 relative ${isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : 'opacity-100 scale-100'}`}>
+            <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 relative ${isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''}`}>
               <SwapCard onSwapComplete={() => setIsSwapCompleted(true)} isCompleted={isSwapCompleted} />
             </div>
-            <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 relative ${!isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : 'opacity-100 scale-100'}`}>
+            <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 relative ${!isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''} ${isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''}`}>
               <BridgeCard isDisabled={!isSwapCompleted} />
             </div>
           </TooltipProvider>
