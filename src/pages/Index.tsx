@@ -1,4 +1,3 @@
-
 import { SwapCard } from "@/components/swap/SwapCard";
 import { BridgeCard } from "@/components/bridge/BridgeCard";
 import { Background } from "@/components/ui/background";
@@ -21,8 +20,8 @@ const Index = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         setTimeout(() => {
           window.location.reload();
-        }, 500);
-      }, 3000); // Changed from 5000 to 3000 ms
+        }, 3000);
+      }, 3000);
 
       return () => clearTimeout(timer);
     }
@@ -54,8 +53,8 @@ const Index = () => {
         }}
       >
         <PageHeader 
-          title="Swap & Bridge"
-          description="Swap your tokens and bridge them to another network seamlessly"
+          title="Upgrade your ZILs"
+          description="A simple 2 step process."
           className={isBridgeCompleted ? "backdrop-blur-sm bg-white/5" : ""}
         />
         <div className={`flex items-center justify-center gap-8 flex-wrap w-full ${isBridgeCompleted ? "backdrop-blur-sm bg-white/5" : ""}`}>
