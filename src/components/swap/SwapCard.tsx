@@ -66,11 +66,13 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
       <div className="flex flex-col items-start gap-[14px] w-full">
         <Tooltip>
           <TooltipTrigger asChild>
-            <div className="w-full">
-              <WalletInfo 
-                address="0xD81(...)C5af2"
-                balance="777,000"
-              />
+            <div className="w-full transition-all duration-300 rounded-[15px] hover:p-[1px] hover:bg-gradient-to-r hover:from-[#00D0C6] hover:to-[#522EFF]">
+              <div className="bg-[#1E1D1D]/80 rounded-[15px]">
+                <WalletInfo 
+                  address="0xD81(...)C5af2"
+                  balance="777,000"
+                />
+              </div>
             </div>
           </TooltipTrigger>
           <TooltipContent 
@@ -85,11 +87,13 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
         
         <Tooltip>
           <TooltipTrigger asChild>
-            <div className="w-full">
-              <TokenSelector 
-                fromToken="Interim ZIL"
-                toToken="eZIL"
-              />
+            <div className="w-full transition-all duration-300 rounded-[15px] hover:p-[1px] hover:bg-gradient-to-r hover:from-[#00D0C6] hover:to-[#522EFF]">
+              <div className="bg-[#1E1D1D]/80 rounded-[15px]">
+                <TokenSelector 
+                  fromToken="Interim ZIL"
+                  toToken="eZIL"
+                />
+              </div>
             </div>
           </TooltipTrigger>
           <TooltipContent 
@@ -104,10 +108,12 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
         
         <Tooltip>
           <TooltipTrigger asChild>
-            <div className="w-full">
-              <NetworkSelector 
-                network="Zilliqa"
-              />
+            <div className="w-full transition-all duration-300 rounded-[15px] hover:p-[1px] hover:bg-gradient-to-r hover:from-[#00D0C6] hover:to-[#522EFF]">
+              <div className="bg-[#1E1D1D]/80 rounded-[15px]">
+                <NetworkSelector 
+                  network="Zilliqa"
+                />
+              </div>
             </div>
           </TooltipTrigger>
           <TooltipContent 
@@ -143,4 +149,3 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
     </StyledCard>
   );
 };
-
