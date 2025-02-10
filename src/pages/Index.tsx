@@ -1,7 +1,6 @@
 
 import { SwapCard } from "@/components/swap/SwapCard";
 import { BridgeCard } from "@/components/bridge/BridgeCard";
-import { Background } from "@/components/ui/background";
 import { CustomNavbar } from "@/components/layout/CustomNavbar";
 import { PageHeader } from "@/components/ui/page-header";
 import { useState } from "react";
@@ -13,7 +12,7 @@ const Index = () => {
   const [isBridgeCompleted, setIsBridgeCompleted] = useState(false);
 
   return (
-    <Background>
+    <div className="min-h-screen bg-gradient-to-br from-[#2B2970] via-black to-[#173C3F]">
       <CustomNavbar />
       <main 
         style={{
@@ -70,7 +69,7 @@ const Index = () => {
           </div>
         )}
       </main>
-    </Background>
+    </div>
   );
 };
 
