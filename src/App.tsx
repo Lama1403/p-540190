@@ -6,11 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import {
-  getDefaultWallets,
-  RainbowKitProvider,
-  darkTheme,
-} from '@rainbow-me/rainbowkit';
+import { getDefaultWallets, RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
 import { createConfig, WagmiConfig, http } from 'wagmi';
 import { mainnet } from 'wagmi/chains';
 import '@rainbow-me/rainbowkit/styles.css';
@@ -22,14 +18,16 @@ const projectId = 'YOUR_PROJECT_ID'; // Replace with your WalletConnect project 
 const { wallets } = getDefaultWallets({
   appName: 'Upgrade App',
   projectId,
+  chains: [mainnet],
 });
 
+// Create wagmi config
 const config = createConfig({
   chains: [mainnet],
   transports: {
     [mainnet.id]: http(),
   },
-  connectors: wallets,
+  connectors: wallets.map(({ wallets }) => wallets).flat(),
 });
 
 const App = () => (
