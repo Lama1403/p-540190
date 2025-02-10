@@ -66,13 +66,15 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
       <div className="flex flex-col items-start gap-[14px] w-full">
         <Tooltip>
           <TooltipTrigger asChild>
-            <div className="w-full transition-all duration-300 rounded-[15px] hover:p-[1px] group">
-              <div className="absolute inset-0 rounded-[15px] bg-gradient-to-r from-[#00D0C6] to-[#522EFF] opacity-0 group-hover:opacity-100 animate-[gradient_3s_ease_infinite] group-hover:bg-[length:200%_200%]" />
-              <div className="bg-[#1E1D1D]/80 rounded-[15px] relative">
-                <WalletInfo 
-                  address="0xD81(...)C5af2"
-                  balance="777,000"
-                />
+            <div className="w-full transition-all duration-300 rounded-[15px] group">
+              <div className="relative p-[1px] rounded-[15px]">
+                <div className="absolute inset-0 rounded-[15px] bg-gradient-to-r from-[#00D0C6] to-[#522EFF] opacity-0 group-hover:opacity-100 animate-[gradient_3s_ease_infinite] group-hover:bg-[length:200%_200%]" />
+                <div className="relative bg-[#1E1D1D]/80 rounded-[15px]">
+                  <WalletInfo 
+                    address="0xD81(...)C5af2"
+                    balance="777,000"
+                  />
+                </div>
               </div>
             </div>
           </TooltipTrigger>
@@ -88,13 +90,15 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
         
         <Tooltip>
           <TooltipTrigger asChild>
-            <div className="w-full transition-all duration-300 rounded-[15px] hover:p-[1px] group">
-              <div className="absolute inset-0 rounded-[15px] bg-gradient-to-r from-[#00D0C6] to-[#522EFF] opacity-0 group-hover:opacity-100 animate-[gradient_3s_ease_infinite] group-hover:bg-[length:200%_200%]" />
-              <div className="bg-[#1E1D1D]/80 rounded-[15px] relative">
-                <TokenSelector 
-                  fromToken="Interim ZIL"
-                  toToken="eZIL"
-                />
+            <div className="w-full transition-all duration-300 rounded-[15px] group">
+              <div className="relative p-[1px] rounded-[15px]">
+                <div className="absolute inset-0 rounded-[15px] bg-gradient-to-r from-[#00D0C6] to-[#522EFF] opacity-0 group-hover:opacity-100 animate-[gradient_3s_ease_infinite] group-hover:bg-[length:200%_200%]" />
+                <div className="relative bg-[#1E1D1D]/80 rounded-[15px]">
+                  <TokenSelector 
+                    fromToken="Interim ZIL"
+                    toToken="eZIL"
+                  />
+                </div>
               </div>
             </div>
           </TooltipTrigger>
@@ -110,12 +114,14 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
         
         <Tooltip>
           <TooltipTrigger asChild>
-            <div className="w-full transition-all duration-300 rounded-[15px] hover:p-[1px] group">
-              <div className="absolute inset-0 rounded-[15px] bg-gradient-to-r from-[#00D0C6] to-[#522EFF] opacity-0 group-hover:opacity-100 animate-[gradient_3s_ease_infinite] group-hover:bg-[length:200%_200%]" />
-              <div className="bg-[#1E1D1D]/80 rounded-[15px] relative">
-                <NetworkSelector 
-                  network="Zilliqa"
-                />
+            <div className="w-full transition-all duration-300 rounded-[15px] group">
+              <div className="relative p-[1px] rounded-[15px]">
+                <div className="absolute inset-0 rounded-[15px] bg-gradient-to-r from-[#00D0C6] to-[#522EFF] opacity-0 group-hover:opacity-100 animate-[gradient_3s_ease_infinite] group-hover:bg-[length:200%_200%]" />
+                <div className="relative bg-[#1E1D1D]/80 rounded-[15px]">
+                  <NetworkSelector 
+                    network="Zilliqa"
+                  />
+                </div>
               </div>
             </div>
           </TooltipTrigger>
