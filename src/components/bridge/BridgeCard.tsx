@@ -37,7 +37,7 @@ export const BridgeCard: React.FC<{
       title: "💎 Maximum Amount Set",
       description: `Set to maximum available: ${maxAmount} ZIL`,
       variant: "default",
-      className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-scale-in",
+      className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-scale-in w-[90vw] sm:w-auto mx-auto sm:mx-0",
       duration: 2000,
     });
   };
@@ -49,7 +49,7 @@ export const BridgeCard: React.FC<{
       title: "🎯 Minimum Amount Set",
       description: `Set to minimum amount: ${maxAmount / 2} ZIL`,
       variant: "default",
-      className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-scale-in",
+      className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-scale-in w-[90vw] sm:w-auto mx-auto sm:mx-0",
       duration: 2000,
     });
   };
@@ -63,7 +63,7 @@ export const BridgeCard: React.FC<{
         title: "⚠️ Error",
         description: "Please enter an amount to bridge",
         variant: "destructive",
-        className: "bg-black/10 backdrop-blur-lg border-red-500/20 text-red-500 rounded-[15px] shadow-2xl animate-fade-in",
+        className: "bg-black/10 backdrop-blur-lg border-red-500/20 text-red-500 rounded-[15px] shadow-2xl animate-fade-in w-[90vw] sm:w-auto mx-auto sm:mx-0",
         duration: 3000,
       });
       setTimeout(() => setButtonText('Bridge'), 3000);
@@ -75,7 +75,7 @@ export const BridgeCard: React.FC<{
       title: "🌉 Bridge Initiated",
       description: `Bridging ${amount} ZIL to Zilliqa Network...`,
       variant: "default",
-      className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-fade-in",
+      className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-fade-in w-[90vw] sm:w-auto mx-auto sm:mx-0",
       duration: 3000,
     });
 
@@ -85,7 +85,7 @@ export const BridgeCard: React.FC<{
         title: "⏳ Processing Bridge",
         description: "Please wait while we process your transaction...",
         variant: "default",
-        className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-fade-in",
+        className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-fade-in w-[90vw] sm:w-auto mx-auto sm:mx-0",
         duration: 2500,
       });
       
@@ -98,7 +98,7 @@ export const BridgeCard: React.FC<{
           title: "✅ Bridge Complete",
           description: "Your tokens have been successfully bridged",
           variant: "default",
-          className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-fade-in",
+          className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-fade-in w-[90vw] sm:w-auto mx-auto sm:mx-0",
           duration: 4000,
         });
       }, 2500);
