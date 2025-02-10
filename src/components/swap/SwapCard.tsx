@@ -8,7 +8,6 @@ import { NetworkSelector } from "./NetworkSelector";
 import { StyledButton } from "@/components/ui/styled-button";
 import { useToast } from "@/hooks/use-toast";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import { Info } from "lucide-react";
 
 interface SwapCardProps {
   onSwapComplete?: () => void;
@@ -59,47 +58,66 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
           title="1- Swap"
           description="Swap your interim ERC-20 ZIL for Bridged ERC-20 ZIL"
         />
-        {isCompleted && (
-          <div className="absolute right-0 top-1/2 -translate-y-1/2">
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <button 
-                  className="p-2 rounded-full hover:bg-white/5 transition-colors cursor-help"
-                  type="button"
-                  aria-label="Swap status info"
-                >
-                  <Info className="w-5 h-5 text-[#9b87f5]" />
-                </button>
-              </TooltipTrigger>
-              <TooltipContent 
-                side="right" 
-                align="center" 
-                className="bg-[#1A1F2C] text-white border-[#9b87f5] shadow-lg"
-                sideOffset={5}
-              >
-                <p className="text-sm">Swap completed! You can now proceed to bridge your tokens to the Zilliqa network.</p>
-              </TooltipContent>
-            </Tooltip>
-          </div>
-        )}
       </div>
       
       <div className="w-full h-[2px] bg-[rgba(194,194,194,0.1)]" />
       
       <div className="flex flex-col items-start gap-[14px] w-full">
-        <WalletInfo 
-          address="0xD81(...)C5af2"
-          balance="777,000"
-        />
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <div className="w-full">
+              <WalletInfo 
+                address="0xD81(...)C5af2"
+                balance="777,000"
+              />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent 
+            side="right" 
+            align="center" 
+            className="bg-[#1A1F2C] text-white border-[#9b87f5] shadow-lg"
+            sideOffset={5}
+          >
+            <p className="text-sm">Your connected wallet address and current balance</p>
+          </TooltipContent>
+        </Tooltip>
         
-        <TokenSelector 
-          fromToken="Interim ZIL"
-          toToken="eZIL"
-        />
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <div className="w-full">
+              <TokenSelector 
+                fromToken="Interim ZIL"
+                toToken="eZIL"
+              />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent 
+            side="right" 
+            align="center" 
+            className="bg-[#1A1F2C] text-white border-[#9b87f5] shadow-lg"
+            sideOffset={5}
+          >
+            <p className="text-sm">Convert your Interim ZIL tokens to Bridged ERC-20 ZIL (eZIL)</p>
+          </TooltipContent>
+        </Tooltip>
         
-        <NetworkSelector 
-          network="Zilliqa"
-        />
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <div className="w-full">
+              <NetworkSelector 
+                network="Zilliqa"
+              />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent 
+            side="right" 
+            align="center" 
+            className="bg-[#1A1F2C] text-white border-[#9b87f5] shadow-lg"
+            sideOffset={5}
+          >
+            <p className="text-sm">The network where your tokens will be swapped</p>
+          </TooltipContent>
+        </Tooltip>
       </div>
       
       <StyledButton variant="primary" onClick={handleSwap}>
