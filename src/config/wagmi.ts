@@ -18,8 +18,8 @@ export const config = createConfig({
   chains,
   connectors,
   transports: {
-    [mainnet.id]: http(),
-    [sepolia.id]: http(),
+    [mainnet.id]: http('https://eth.public-rpc.com'),
+    [sepolia.id]: http('https://rpc2.sepolia.org'),
   },
 });
 
