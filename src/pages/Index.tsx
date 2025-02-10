@@ -5,7 +5,7 @@ import { CustomNavbar } from "@/components/layout/CustomNavbar";
 import { PageHeader } from "@/components/ui/page-header";
 import { useState } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Sparkles, Star } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 const Index = () => {
   const [isSwapCompleted, setIsSwapCompleted] = useState(false);
@@ -49,7 +49,19 @@ const Index = () => {
             <div className="relative p-8 text-center space-y-8 animate-scale-in">
               <div className="relative">
                 <div className="w-24 h-24 rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#D946EF] flex items-center justify-center mx-auto animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]">
-                  <Star className="w-12 h-12 text-white animate-[spin_4s_linear_infinite]" />
+                  <svg width="26" height="36" viewBox="0 0 26 36" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 text-white animate-[spin_4s_linear_infinite]">
+                    <g clipPath="url(#clip0_249_3836)">
+                      <path d="M20.5724 17.2054L6.4431 24.0634L20.5724 30.6622V36L0 26.3782V21.1267L14.3044 14.1824L0 7.49717V2.17664L20.5724 11.7812V17.2054Z" fill="white"/>
+                      <path d="M0 2.17658L5.44512 0L26 9.62188L20.5724 11.7812L0 2.17658Z" fill="#D8D8D8"/>
+                      <path d="M20.5724 17.2053L26 15.0287V9.62183L20.5724 11.7811V17.2053Z" fill="#AFAFAF"/>
+                      <path d="M20.5724 30.6622V20.0038L26 17.5336V33.8234L20.5724 36V30.6622Z" fill="#AFAFAF"/>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_249_3836">
+                        <rect width="26" height="36" fill="white"/>
+                      </clipPath>
+                    </defs>
+                  </svg>
                 </div>
                 <div className="absolute -top-4 -right-4">
                   <Sparkles className="w-8 h-8 text-[#F97316] animate-[bounce_2s_infinite]" />
