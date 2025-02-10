@@ -46,7 +46,7 @@ export const AmountInput: React.FC<AmountInputProps> = ({
                       type="text"
                       value={amount}
                       onChange={onAmountChange}
-                      className="bg-transparent font-montserrat font-bold text-[33px] leading-[120%] tracking-[-0.02em] text-white w-full focus:outline-none"
+                      className={`bg-transparent font-montserrat font-bold text-[33px] leading-[120%] tracking-[-0.02em] w-full focus:outline-none ${error ? 'text-[#ea384c]' : 'text-white'}`}
                       placeholder="0.0"
                       disabled={disabled}
                     />
