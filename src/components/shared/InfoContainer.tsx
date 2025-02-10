@@ -21,7 +21,7 @@ export const InfoContainer: React.FC<InfoContainerProps> = ({
   showBalanceLabel = false
 }) => {
   return (
-    <div className="flex flex-row justify-between items-center p-[17px] gap-[8px] w-full h-[64px] min-h-[48px] bg-[#1E1D1D]/80 backdrop-blur-lg shadow-2xl rounded-[15px]">
+    <div className="flex flex-row justify-between items-center p-[17px] gap-[8px] w-full h-[64px] min-h-[48px] bg-[#1E1D1D]/80 backdrop-blur-lg shadow-2xl rounded-[15px] relative">
       <div className="flex flex-row items-center gap-[15px]">
         {leftIcon && (
           <div className="flex flex-row justify-center items-center w-[30.04px] h-[30.04px] rounded-[45px] bg-[#2C9297]">
@@ -41,7 +41,7 @@ export const InfoContainer: React.FC<InfoContainerProps> = ({
       </div>
 
       {centerIcon && (
-        <div className="absolute left-1/2 transform -translate-x-1/2 flex justify-center items-center w-[30px]">
+        <div className="absolute left-1/2 -translate-x-1/2 flex justify-center items-center w-[30px] z-10">
           {centerIcon}
         </div>
       )}
