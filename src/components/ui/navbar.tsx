@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 export const Navbar = () => {
   return (
@@ -27,6 +28,17 @@ export const Navbar = () => {
             </clipPath>
           </defs>
         </svg>
+      </div>
+      
+      {/* Right side - Wallet Connection */}
+      <div className="flex items-center">
+        <ConnectButton 
+          chainStatus="icon"
+          showBalance={{
+            smallScreen: false,
+            largeScreen: true,
+          }}
+        />
       </div>
     </nav>
   );

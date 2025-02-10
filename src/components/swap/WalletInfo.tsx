@@ -1,12 +1,24 @@
 
 import React from 'react';
+import { useAccount, useBalance } from 'wagmi';
 
 interface WalletInfoProps {
-  address: string;
-  balance: string;
+  address?: string;
+  balance?: string;
 }
 
-export const WalletInfo: React.FC<WalletInfoProps> = ({ address, balance }) => {
+export const WalletInfo: React.FC<WalletInfoProps> = () => {
+  const { address } = useAccount();
+  const { data: balanceData } = useBalance({
+    address: address,
+  });
+
+  const displayAddress = address ? `${address.slice(0, 4)}...${address.slice(-4)}` : '0x00...0000';
+  const displayBalance = balanceData ? Number(balanceData.formatted).toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 4
+  }) : '0.00';
+
   return (
     <div className="flex flex-row justify-between items-center p-[17px] gap-[8px] w-full h-[64px] min-h-[48px] bg-[#1E1D1D]/80 backdrop-blur-lg shadow-2xl rounded-[15px]">
       <div className="flex flex-row items-center gap-[15px] w-full">
@@ -15,7 +27,7 @@ export const WalletInfo: React.FC<WalletInfoProps> = ({ address, balance }) => {
             Wallet
           </span>
           <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-white">
-            {address}
+            {displayAddress}
           </span>
         </div>
         <div className="flex flex-row justify-center items-center gap-[5px] ml-auto">
@@ -23,11 +35,10 @@ export const WalletInfo: React.FC<WalletInfoProps> = ({ address, balance }) => {
             Balance
           </span>
           <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-white">
-            {balance}
+            {displayBalance}
           </span>
         </div>
       </div>
     </div>
   );
 };
-
