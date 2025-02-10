@@ -33,7 +33,7 @@ const Index = () => {
             <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 relative ${isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''}`}>
               <SwapCard onSwapComplete={() => setIsSwapCompleted(true)} isCompleted={isSwapCompleted} />
             </div>
-            <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 relative ${!isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''} ${isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''}`}>
+            <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 relative ${!isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''}`}>
               <BridgeCard isDisabled={!isSwapCompleted} />
             </div>
           </TooltipProvider>
