@@ -7,10 +7,12 @@ import { useToast } from "@/hooks/use-toast";
 import { AddressInfo } from "./components/AddressInfo";
 import { TokenInfo } from "./components/TokenInfo";
 import { AmountInput } from "./components/AmountInput";
+import { Check } from "lucide-react";
 
 export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = true }) => {
   const [amount, setAmount] = useState<string>('');
   const [buttonText, setButtonText] = useState<string>('Bridge');
+  const [isSuccess, setIsSuccess] = useState(false);
   const maxAmount = 1000;
   const { toast } = useToast();
 
@@ -76,8 +78,24 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
         duration: 2500,
       });
       
-      // Reset button text after processing
-      setTimeout(() => setButtonText('Bridge'), 2500);
+      // Show success state after processing
+      setTimeout(() => {
+        setButtonText('Success');
+        setIsSuccess(true);
+        toast({
+          title: "✅ Bridge Complete",
+          description: "Your tokens have been successfully bridged",
+          variant: "default",
+          className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-fade-in",
+          duration: 3000,
+        });
+        
+        // Reset button text and success state after showing success
+        setTimeout(() => {
+          setButtonText('Bridge');
+          setIsSuccess(false);
+        }, 2000);
+      }, 2500);
     }, 2000);
   };
 
@@ -106,8 +124,16 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
         onClick={handleBridge}
         disabled={isDisabled}
       >
-        {buttonText}
+        {isSuccess ? (
+          <div className="flex items-center gap-2">
+            <Check className="w-4 h-4 animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]" /> 
+            <span className="animate-fade-in">Success</span>
+          </div>
+        ) : (
+          buttonText
+        )}
       </StyledButton>
     </StyledCard>
   );
 };
+
