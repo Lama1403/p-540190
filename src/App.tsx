@@ -21,10 +21,9 @@ const projectId = '965d2688f2fc05f0385e035cf0768d6e';
 
 const { connectors } = getDefaultWallets({
   appName: 'My RainbowKit App',
-  projectId
+  projectId,
 });
 
-// Create wagmi config
 const config = createConfig({
   chains: [mainnet],
   transports: {
@@ -37,6 +36,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <WagmiConfig config={config}>
       <RainbowKitProvider 
+        chains={[mainnet]}
         theme={darkTheme({
           accentColor: '#00D0C6',
           borderRadius: 'medium',
