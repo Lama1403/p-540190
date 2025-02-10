@@ -4,13 +4,11 @@ import React from 'react';
 interface WalletInfoProps {
   address?: string;
   balance?: string;
-  unit?: string;
 }
 
 export const WalletInfo: React.FC<WalletInfoProps> = ({ 
   address = "0x1234...5678",
-  balance = "1.234",
-  unit = "ETH"
+  balance = "1.234 ETH"
 }) => {
   return (
     <div className="flex flex-row items-center gap-2.5 w-[240.57px] h-[34.73px]">
@@ -26,14 +24,9 @@ export const WalletInfo: React.FC<WalletInfoProps> = ({
       {/* Wallet Container */}
       <div className="flex flex-row items-center px-[9px] py-1 gap-[7px] w-[192.57px] h-[34.73px] bg-[#1E1D1D] rounded-lg">
         {/* Balance */}
-        <div className="flex flex-col items-start">
-          <span className="font-['Montserrat'] font-semibold text-[15px] leading-[18px] text-white">
-            {balance}
-          </span>
-          <span className="font-['Montserrat'] font-semibold text-[15px] leading-[18px] text-white">
-            {unit}
-          </span>
-        </div>
+        <span className="font-['Montserrat'] font-semibold text-[15px] leading-[46px] flex items-center text-white capitalize">
+          {balance}
+        </span>
 
         {/* Address Container */}
         <div className="flex flex-row items-center px-[5px] py-[3px] gap-[5px] w-[101.97px] h-[24.95px] bg-[#333333] rounded-[5px]">
