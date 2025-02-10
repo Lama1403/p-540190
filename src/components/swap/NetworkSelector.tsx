@@ -9,8 +9,8 @@ interface NetworkSelectorProps {
 export const NetworkSelector: React.FC<NetworkSelectorProps> = ({ network }) => {
   return (
     <InfoContainer
-      mainText="Network"
-      rightText={network}
+      mainText={network}
+      rightText="Network"
     />
   );
 };
