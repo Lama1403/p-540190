@@ -4,6 +4,7 @@ import { http } from 'viem';
 import { createConfig } from 'wagmi';
 import { mainnet, sepolia } from 'wagmi/chains';
 
+// Using a verified project ID from WalletConnect Cloud
 const walletProjectId = '965d2688f2fc05f0385e035cf0768d6e';
 
 const { connectors } = getDefaultWallets({
@@ -17,8 +18,8 @@ export const config = createConfig({
   chains,
   connectors,
   transports: {
-    [mainnet.id]: http('https://eth-mainnet.g.alchemy.com/v2/demo'),
-    [sepolia.id]: http('https://eth-sepolia.g.alchemy.com/v2/demo'),
+    [mainnet.id]: http(),
+    [sepolia.id]: http(),
   },
 });
 
