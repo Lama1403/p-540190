@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { StyledCard } from "@/components/ui/styled-card";
 import { SwapHeader } from "./SwapHeader";
@@ -142,7 +143,7 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
         className={`relative transition-all duration-300 ${
           isCompleted 
             ? "bg-gradient-to-r from-[#00D0C6] to-[#522EFF] border-[#522EFF] cursor-not-allowed shadow-lg hover:shadow-xl hover:scale-[1.02] animate-fade-in" 
-            : "relative before:absolute before:inset-[-2px] before:rounded-[15px] before:bg-gradient-to-r before:from-[#00D0C6] before:via-[#243949] before:to-[#522EFF] before:transition-all before:duration-300 before:opacity-0 hover:before:opacity-100 before:z-[-1] overflow-visible bg-[#1E1D1D]"
+            : "relative bg-[#1E1D1D] border-[1.5px] border-transparent hover:border-[1.5px] hover:border-[transparent] rounded-[127px] before:absolute before:inset-[-1.5px] before:rounded-[127px] before:p-[1.5px] before:bg-gradient-to-r before:from-[#00D0C6] before:via-[#243949] before:to-[#522EFF] before:opacity-0 hover:before:opacity-100 before:transition-all before:duration-300"
         }`}
       >
         {isCompleted ? (
