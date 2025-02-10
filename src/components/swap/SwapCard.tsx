@@ -8,7 +8,11 @@ import { NetworkSelector } from "./NetworkSelector";
 import { StyledButton } from "@/components/ui/styled-button";
 import { useToast } from "@/hooks/use-toast";
 
-export const SwapCard: React.FC = () => {
+interface SwapCardProps {
+  onSwapComplete?: () => void;
+}
+
+export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete }) => {
   const { toast } = useToast();
 
   const handleSwap = () => {
@@ -30,6 +34,18 @@ export const SwapCard: React.FC = () => {
         className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-xl shadow-2xl animate-fade-in",
         duration: 2000,
       });
+
+      // Simulate swap completion after processing
+      setTimeout(() => {
+        toast({
+          title: "✅ Swap Complete",
+          description: "You can now proceed to bridge your tokens",
+          variant: "default",
+          className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-xl shadow-2xl animate-fade-in",
+          duration: 3000,
+        });
+        onSwapComplete?.();
+      }, 2000);
     }, 1500);
   };
 

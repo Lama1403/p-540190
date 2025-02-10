@@ -7,7 +7,8 @@ import { InputLabelButton } from "@/components/ui/input-label-button";
 import { BridgeHeader } from "./BridgeHeader";
 import { useToast } from "@/hooks/use-toast";
 
-export const BridgeCard: React.FC = () => {
+// Add a disabled prop to control the card's state
+export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = true }) => {
   const [amount, setAmount] = useState<string>('');
   const maxAmount = 1000;
   const { toast } = useToast();
@@ -53,7 +54,6 @@ export const BridgeCard: React.FC = () => {
       return;
     }
     
-    // Success toast
     toast({
       title: "🌉 Bridge Initiated",
       description: `Bridging ${amount} ZIL to Zilliqa Network...`,
@@ -62,7 +62,6 @@ export const BridgeCard: React.FC = () => {
       duration: 3000,
     });
 
-    // Show progress toast after delay
     setTimeout(() => {
       toast({
         title: "⏳ Processing Bridge",
@@ -75,7 +74,7 @@ export const BridgeCard: React.FC = () => {
   };
 
   return (
-    <StyledCard>
+    <StyledCard className={`transition-opacity duration-300 ${isDisabled ? 'opacity-50 pointer-events-none' : 'opacity-100'}`}>
       <BridgeHeader 
         title="2- Bridge"
         description="Bridge your Interim ERC-20 ZIL to Zilliqa Network"
@@ -154,4 +153,3 @@ export const BridgeCard: React.FC = () => {
     </StyledCard>
   );
 };
-
