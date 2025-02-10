@@ -17,7 +17,7 @@ export const TokenInfo = () => {
                 mainText="ERC-20 ZIL"
                 centerIcon={<ChevronRight className="w-[14px] h-[12px] text-white" />}
                 rightIcon={<></>}
-                rightText="Interim ZIL"
+                mainRightText="Interim ZIL"
               />
             </div>
           </div>
@@ -34,4 +34,3 @@ export const TokenInfo = () => {
     </Tooltip>
   );
 };
-

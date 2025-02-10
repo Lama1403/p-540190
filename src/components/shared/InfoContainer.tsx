@@ -7,6 +7,7 @@ interface InfoContainerProps {
   mainText: string;
   secondaryText?: string;
   rightText?: string;
+  mainRightText?: string;
   centerIcon?: ReactNode;
   showBalanceLabel?: boolean;
 }
@@ -17,6 +18,7 @@ export const InfoContainer: React.FC<InfoContainerProps> = ({
   mainText,
   secondaryText,
   rightText,
+  mainRightText,
   centerIcon,
   showBalanceLabel = false
 }) => {
@@ -46,8 +48,13 @@ export const InfoContainer: React.FC<InfoContainerProps> = ({
         </div>
       )}
 
-      {(rightText || rightIcon) && (
+      {(mainRightText || rightText || rightIcon) && (
         <div className="flex flex-row items-center gap-[15px] ml-auto">
+          {mainRightText && (
+            <span className="font-['Montserrat'] font-semibold text-[14.2665px] leading-[19px] tracking-[-0.02em] text-[#E1E2E2]">
+              {mainRightText}
+            </span>
+          )}
           {rightText && (
             <div className="flex flex-row items-center gap-[5px]">
               {showBalanceLabel && (
