@@ -46,8 +46,8 @@ export const BridgeCard: React.FC<{
     if (isSuccess) return; // Prevent half click if in success state
     setAmount((maxAmount / 2).toString());
     toast({
-      title: "🎯 Half Amount Set",
-      description: `Set to half of maximum: ${maxAmount / 2} ZIL`,
+      title: "🎯 Minimum Amount Set",
+      description: `Set to minimum amount: ${maxAmount / 2} ZIL`,
       variant: "default",
       className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-scale-in",
       duration: 2000,
@@ -144,3 +144,4 @@ export const BridgeCard: React.FC<{
     </StyledCard>
   );
 };
+
