@@ -6,7 +6,7 @@ const Index = () => {
     <main 
       className="min-h-screen w-full flex items-center justify-center p-4"
       style={{
-        backgroundImage: `url('/d127b1b1-c1c5-472d-a36f-98dedde7aba1.png')`,
+        backgroundImage: `url('/public/d127b1b1-c1c5-472d-a36f-98dedde7aba1.png')`,
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
