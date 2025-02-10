@@ -20,17 +20,18 @@ const queryClient = new QueryClient();
 
 const projectId = 'YOUR_PROJECT_ID';
 
-const { wallets } = getDefaultWallets();
+const { wallets } = getDefaultWallets({
+  appName: 'My RainbowKit App',
+  projectId,
+  chains: [mainnet],
+});
 
 const connectors = connectorsForWallets([
   {
     groupName: 'Recommended',
-    wallets: wallets
-  }
-], {
-  appName: 'My RainbowKit App',
-  projectId
-});
+    wallets: wallets,
+  },
+]);
 
 // Create wagmi config
 const config = createConfig({
