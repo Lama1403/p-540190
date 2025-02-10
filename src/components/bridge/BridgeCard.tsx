@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ChevronRight } from "lucide-react";
 import { StyledCard } from "@/components/ui/styled-card";
@@ -5,7 +6,7 @@ import { StyledButton } from "@/components/ui/styled-button";
 import { InputLabelButton } from "@/components/ui/input-label-button";
 import { BridgeHeader } from "./BridgeHeader";
 import { useToast } from "@/hooks/use-toast";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/components/ui/tooltip";
 import { Info } from "lucide-react";
 
 export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = true }) => {
@@ -81,16 +82,25 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
           description="Bridge your Interim ERC-20 ZIL to Zilliqa Network"
         />
         {isDisabled && (
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <button className="absolute right-0 top-1/2 -translate-y-1/2 p-2 rounded-full hover:bg-white/5 transition-colors cursor-help touch:cursor-pointer">
-                <Info className="w-5 h-5 text-[#8E9196]" />
-              </button>
-            </TooltipTrigger>
-            <TooltipContent side="right" align="center" className="bg-[#1A1F2C] text-white border-[#8E9196] shadow-lg">
-              <p className="text-sm">You need to complete the token swap before you can bridge your tokens to the Zilliqa network. Complete step 1 first.</p>
-            </TooltipContent>
-          </Tooltip>
+          <TooltipProvider>
+            <Tooltip delayDuration={0}>
+              <TooltipTrigger asChild>
+                <button 
+                  className="absolute right-0 top-1/2 -translate-y-1/2 p-2 rounded-full hover:bg-white/5 transition-colors cursor-help"
+                  type="button"
+                >
+                  <Info className="w-5 h-5 text-[#8E9196]" />
+                </button>
+              </TooltipTrigger>
+              <TooltipContent 
+                side="right" 
+                align="center" 
+                className="bg-[#1A1F2C] text-white border-[#8E9196] shadow-lg"
+              >
+                <p className="text-sm">You need to complete the token swap before you can bridge your tokens to the Zilliqa network. Complete step 1 first.</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         )}
       </div>
       

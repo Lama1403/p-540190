@@ -7,7 +7,7 @@ import { TokenSelector } from "./TokenSelector";
 import { NetworkSelector } from "./NetworkSelector";
 import { StyledButton } from "@/components/ui/styled-button";
 import { useToast } from "@/hooks/use-toast";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/components/ui/tooltip";
 import { Info } from "lucide-react";
 
 interface SwapCardProps {
@@ -60,16 +60,25 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
           description="Swap your interim ERC-20 ZIL for Bridged ERC-20 ZIL"
         />
         {isCompleted && (
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <button className="absolute right-0 top-1/2 -translate-y-1/2 p-2 rounded-full hover:bg-white/5 transition-colors cursor-help touch:cursor-pointer">
-                <Info className="w-5 h-5 text-[#9b87f5]" />
-              </button>
-            </TooltipTrigger>
-            <TooltipContent side="right" align="center" className="bg-[#1A1F2C] text-white border-[#9b87f5] shadow-lg">
-              <p className="text-sm">Swap completed! You can now proceed to bridge your tokens to the Zilliqa network.</p>
-            </TooltipContent>
-          </Tooltip>
+          <TooltipProvider>
+            <Tooltip delayDuration={0}>
+              <TooltipTrigger asChild>
+                <button 
+                  className="absolute right-0 top-1/2 -translate-y-1/2 p-2 rounded-full hover:bg-white/5 transition-colors cursor-help"
+                  type="button"
+                >
+                  <Info className="w-5 h-5 text-[#9b87f5]" />
+                </button>
+              </TooltipTrigger>
+              <TooltipContent 
+                side="right" 
+                align="center" 
+                className="bg-[#1A1F2C] text-white border-[#9b87f5] shadow-lg"
+              >
+                <p className="text-sm">Swap completed! You can now proceed to bridge your tokens to the Zilliqa network.</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         )}
       </div>
       
