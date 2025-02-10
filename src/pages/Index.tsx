@@ -22,7 +22,7 @@ const Index = () => {
         setTimeout(() => {
           window.location.reload();
         }, 500);
-      }, 5000);
+      }, 3000); // Changed from 5000 to 3000 ms
 
       return () => clearTimeout(timer);
     }
@@ -117,17 +117,17 @@ const Index = () => {
                   <Star className="w-12 h-12 text-white animate-[spin_4s_linear_infinite]" />
                 </div>
                 <div className="absolute -top-4 -right-4">
-                  <Sparkles className="w-8 h-8 text-[#00D0C6] animate-[bounce_2s_infinite]" />
+                  <Sparkles className="w-8 h-8 text-white animate-[bounce_2s_infinite]" />
                 </div>
                 <div className="absolute -bottom-4 -left-4">
-                  <Sparkles className="w-8 h-8 text-[#522EFF] animate-[bounce_2s_infinite_0.5s]" />
+                  <Sparkles className="w-8 h-8 text-white animate-[bounce_2s_infinite_0.5s]" />
                 </div>
               </div>
               <div className="space-y-4">
-                <h2 className="text-4xl font-bold bg-gradient-to-r from-[#00D0C6] to-[#522EFF] text-transparent bg-clip-text animate-[pulse_2s_ease-in-out_infinite]">
+                <h2 className="text-4xl font-bold text-white animate-[pulse_2s_ease-in-out_infinite]">
                   Upgrade Complete!
                 </h2>
-                <p className="text-white/90 text-lg">
+                <p className="text-white text-lg">
                   Your tokens have ascended to the Zilliqa Network ✨
                 </p>
               </div>
