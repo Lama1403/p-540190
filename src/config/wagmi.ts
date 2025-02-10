@@ -15,11 +15,10 @@ const { connectors } = getDefaultWallets({
 export const config = createConfig({
   chains: [mainnet, sepolia],
   transports: {
-    [mainnet.id]: http(),
-    [sepolia.id]: http(),
+    [mainnet.id]: http('https://eth-mainnet.g.alchemy.com/v2/demo'),
+    [sepolia.id]: http('https://eth-sepolia.g.alchemy.com/v2/demo'),
   },
   connectors,
 });
 
 export const chains = [mainnet, sepolia];
-
