@@ -18,18 +18,17 @@ import '@rainbow-me/rainbowkit/styles.css';
 
 const queryClient = new QueryClient();
 
-const projectId = 'YOUR_PROJECT_ID';
+const projectId = '965d2688f2fc05f0385e035cf0768d6e';
 
 const { wallets } = getDefaultWallets({
   appName: 'My RainbowKit App',
-  projectId,
-  chains: [mainnet],
+  projectId
 });
 
 const connectors = connectorsForWallets([
   {
     groupName: 'Recommended',
-    wallets: wallets,
+    wallets
   },
 ]);
 
