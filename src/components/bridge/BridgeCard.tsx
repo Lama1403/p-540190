@@ -19,20 +19,23 @@ export const BridgeCard: React.FC<{
   const [amount, setAmount] = useState<string>('');
   const [buttonText, setButtonText] = useState<string>('Bridge');
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isError, setIsError] = useState(false);
   const maxAmount = 1000;
   const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (isSuccess) return; // Prevent input changes if in success state
+    if (isSuccess) return;
     const value = e.target.value;
     if (value === '' || /^\d*\.?\d*$/.test(value)) {
       setAmount(value);
+      setIsError(false);
     }
   };
 
   const handleMaxClick = () => {
-    if (isSuccess) return; // Prevent max click if in success state
+    if (isSuccess) return;
     setAmount(maxAmount.toString());
+    setIsError(false);
     toast({
       title: "💎 Maximum Amount Set",
       description: `Set to maximum available: ${maxAmount} ZIL`,
@@ -43,8 +46,9 @@ export const BridgeCard: React.FC<{
   };
 
   const handleHalfClick = () => {
-    if (isSuccess) return; // Prevent half click if in success state
+    if (isSuccess) return;
     setAmount((maxAmount / 2).toString());
+    setIsError(false);
     toast({
       title: "🎯 Minimum Amount Set",
       description: `Set to minimum amount: ${maxAmount / 2} ZIL`,
@@ -55,9 +59,10 @@ export const BridgeCard: React.FC<{
   };
 
   const handleBridge = () => {
-    if (isSuccess) return; // Prevent clicking if already in success state
+    if (isSuccess) return;
     
-    if (!amount) {
+    if (!amount || parseFloat(amount) === 0) {
+      setIsError(true);
       setButtonText('Enter Amount');
       toast({
         title: "⚠️ Error",
@@ -70,6 +75,7 @@ export const BridgeCard: React.FC<{
       return;
     }
     
+    setIsError(false);
     setButtonText('Initiating Bridge...');
     toast({
       title: "🌉 Bridge Initiated",
@@ -89,11 +95,10 @@ export const BridgeCard: React.FC<{
         duration: 2500,
       });
       
-      // Show success state after processing
       setTimeout(() => {
         setButtonText('Success');
         setIsSuccess(true);
-        onBridgeComplete?.(); // Call the completion callback
+        onBridgeComplete?.();
         toast({
           title: "✅ Bridge Complete",
           description: "Your tokens have been successfully bridged",
@@ -123,7 +128,7 @@ export const BridgeCard: React.FC<{
         onAmountChange={handleInputChange}
         onMaxClick={handleMaxClick}
         onHalfClick={handleHalfClick}
-        error={false}
+        error={isError}
         disabled={isSuccess}
       />
 
@@ -144,3 +149,4 @@ export const BridgeCard: React.FC<{
     </StyledCard>
   );
 };
+
