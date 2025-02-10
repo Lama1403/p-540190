@@ -78,7 +78,7 @@ const Index = () => {
         </div>
         {isBridgeCompleted && (
           <div className="fixed inset-0 z-50 flex items-center justify-center">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#00D0C6] via-black/80 to-[#522EFF] backdrop-blur-lg" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#00D0C6] via-[#9b87f5] to-[#522EFF] backdrop-blur-lg" />
             <div className="relative p-8 text-center space-y-8 animate-scale-in">
               <div className="relative">
                 <div className="w-24 h-24 rounded-full bg-gradient-to-r from-[#00D0C6] to-[#522EFF] flex items-center justify-center mx-auto animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]">
@@ -108,4 +108,3 @@ const Index = () => {
 };
 
 export default Index;
-
