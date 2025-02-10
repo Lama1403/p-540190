@@ -23,7 +23,6 @@ const projectId = '0784c68ea4dc749fb68c760035cf1523';
 const { connectors } = getDefaultWallets({
   appName: 'My RainbowKit App',
   projectId,
-  chains: [mainnet]
 });
 
 const wagmiConfig = createConfig({
