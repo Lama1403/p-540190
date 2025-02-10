@@ -4,13 +4,24 @@ import { BridgeCard } from "@/components/bridge/BridgeCard";
 import { Background } from "@/components/ui/background";
 import { CustomNavbar } from "@/components/layout/CustomNavbar";
 import { PageHeader } from "@/components/ui/page-header";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Sparkles, Star } from "lucide-react";
 
 const Index = () => {
   const [isSwapCompleted, setIsSwapCompleted] = useState(false);
   const [isBridgeCompleted, setIsBridgeCompleted] = useState(false);
+
+  useEffect(() => {
+    if (isBridgeCompleted) {
+      // Wait 5 seconds then refresh the page
+      const timer = setTimeout(() => {
+        window.location.reload();
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isBridgeCompleted]);
 
   return (
     <Background>
@@ -76,4 +87,3 @@ const Index = () => {
 };
 
 export default Index;
-
