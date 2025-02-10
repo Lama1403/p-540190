@@ -6,33 +6,27 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import { connectorsForWallets, RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
+import { 
+  connectorsForWallets,
+  RainbowKitProvider,
+  darkTheme,
+  getDefaultWallets
+} from '@rainbow-me/rainbowkit';
 import { createConfig, WagmiConfig, http } from 'wagmi';
 import { mainnet } from 'wagmi/chains';
 import '@rainbow-me/rainbowkit/styles.css';
-import {
-  injectedWallet,
-  rainbowWallet,
-  walletConnectWallet,
-  coinbaseWallet,
-  metaMaskWallet,
-} from '@rainbow-me/rainbowkit/wallets';
 
 const queryClient = new QueryClient();
 
-const projectId = 'YOUR_PROJECT_ID'; // We'll handle this securely based on your preference
+const projectId = 'YOUR_PROJECT_ID';
+
+const { wallets } = getDefaultWallets();
 
 const connectors = connectorsForWallets([
   {
     groupName: 'Recommended',
-    wallets: [
-      injectedWallet({ projectId, chains: [mainnet] }),
-      rainbowWallet({ projectId, chains: [mainnet] }),
-      walletConnectWallet({ projectId, chains: [mainnet] }),
-      coinbaseWallet({ appName: 'My RainbowKit App', chains: [mainnet] }),
-      metaMaskWallet({ projectId, chains: [mainnet] }),
-    ],
-  },
+    wallets: wallets
+  }
 ], {
   appName: 'My RainbowKit App',
   projectId
