@@ -25,7 +25,7 @@ export const BridgeCard: React.FC = () => {
       title: "💎 Maximum Amount Set",
       description: `Set to maximum available: ${maxAmount} ZIL`,
       variant: "default",
-      className: "bg-[#FEF7CD] border-[#9b87f5] text-[#1A1F2C] rounded-lg shadow-lg animate-scale-in",
+      className: "bg-[#0000001a] backdrop-blur-md border-[#9b87f5] text-white rounded-lg shadow-lg animate-scale-in",
       duration: 2000,
     });
   };
@@ -36,7 +36,7 @@ export const BridgeCard: React.FC = () => {
       title: "🎯 Half Amount Set",
       description: `Set to half of maximum: ${maxAmount / 2} ZIL`,
       variant: "default",
-      className: "bg-[#FDE1D3] border-[#9b87f5] text-[#1A1F2C] rounded-lg shadow-lg animate-scale-in",
+      className: "bg-[#0000001a] backdrop-blur-md border-[#9b87f5] text-white rounded-lg shadow-lg animate-scale-in",
       duration: 2000,
     });
   };
@@ -47,7 +47,7 @@ export const BridgeCard: React.FC = () => {
         title: "⚠️ Error",
         description: "Please enter an amount to bridge",
         variant: "destructive",
-        className: "bg-[#FFDEE2] border-[#ea384c] text-[#ea384c] rounded-lg shadow-lg animate-fade-in",
+        className: "bg-[#0000001a] backdrop-blur-md border-[#ea384c] text-[#ea384c] rounded-lg shadow-lg animate-fade-in",
         duration: 3000,
       });
       return;
@@ -58,7 +58,7 @@ export const BridgeCard: React.FC = () => {
       title: "🌉 Bridge Initiated",
       description: `Bridging ${amount} ZIL to Zilliqa Network...`,
       variant: "default",
-      className: "bg-[#F2FCE2] border-[#9b87f5] text-[#1A1F2C] rounded-lg shadow-lg animate-fade-in",
+      className: "bg-[#0000001a] backdrop-blur-md border-[#9b87f5] text-white rounded-lg shadow-lg animate-fade-in",
       duration: 3000,
     });
 
@@ -68,7 +68,7 @@ export const BridgeCard: React.FC = () => {
         title: "⏳ Processing Bridge",
         description: "Please wait while we process your transaction...",
         variant: "default",
-        className: "bg-[#D3E4FD] border-[#9b87f5] text-[#1A1F2C] rounded-lg shadow-lg animate-fade-in",
+        className: "bg-[#0000001a] backdrop-blur-md border-[#9b87f5] text-white rounded-lg shadow-lg animate-fade-in",
         duration: 2500,
       });
     }, 2000);

@@ -17,7 +17,7 @@ export const SwapCard: React.FC = () => {
       title: "✨ Swap Initiated",
       description: "Converting Interim ZIL to Bridged ERC-20 ZIL...",
       variant: "default",
-      className: "bg-[#F2FCE2] border-[#9b87f5] text-[#1A1F2C] rounded-lg shadow-lg animate-fade-in",
+      className: "bg-[#0000001a] backdrop-blur-md border-[#9b87f5] text-white rounded-lg shadow-lg animate-fade-in",
       duration: 3000,
     });
 
@@ -27,7 +27,7 @@ export const SwapCard: React.FC = () => {
         title: "🔄 Processing",
         description: "Transaction in progress...",
         variant: "default",
-        className: "bg-[#D3E4FD] border-[#9b87f5] text-[#1A1F2C] rounded-lg shadow-lg animate-fade-in",
+        className: "bg-[#0000001a] backdrop-blur-md border-[#9b87f5] text-white rounded-lg shadow-lg animate-fade-in",
         duration: 2000,
       });
     }, 1500);
