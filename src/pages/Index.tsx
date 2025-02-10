@@ -26,8 +26,26 @@ const Index = () => {
           gap: "2rem"
         }}
       >
+        <PageHeader 
+          title="Swap & Bridge"
+          description="Swap your tokens and bridge them to another network seamlessly"
+          className={isBridgeCompleted ? "backdrop-blur-sm bg-white/5" : ""}
+        />
+        <div className={`flex items-center justify-center gap-8 flex-wrap w-full ${isBridgeCompleted ? "backdrop-blur-sm bg-white/5" : ""}`}>
+          <TooltipProvider delayDuration={0}>
+            <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 relative ${isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''}`}>
+              <SwapCard onSwapComplete={() => setIsSwapCompleted(true)} isCompleted={isSwapCompleted} />
+            </div>
+            <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 relative ${!isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''} ${isBridgeCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''}`}>
+              <BridgeCard 
+                isDisabled={!isSwapCompleted} 
+                onBridgeComplete={() => setIsBridgeCompleted(true)}
+              />
+            </div>
+          </TooltipProvider>
+        </div>
         {isBridgeCompleted && (
-          <div className="fixed inset-0 bg-gradient-to-br from-purple-900/20 via-black/10 to-blue-900/20 backdrop-blur-[2px] z-50 flex items-center justify-center animate-fade-in">
+          <div className="fixed inset-0 bg-gradient-to-br from-purple-900/20 via-black/10 to-blue-900/20 z-50 flex items-center justify-center animate-fade-in">
             <div className="p-8 rounded-xl bg-black/5 backdrop-blur-md text-center space-y-8 animate-scale-in">
               <div className="relative">
                 <div className="w-24 h-24 rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#D946EF] flex items-center justify-center mx-auto animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]">
@@ -51,23 +69,6 @@ const Index = () => {
             </div>
           </div>
         )}
-        <PageHeader 
-          title="Swap & Bridge"
-          description="Swap your tokens and bridge them to another network seamlessly"
-        />
-        <div className="flex items-center justify-center gap-8 flex-wrap w-full">
-          <TooltipProvider delayDuration={0}>
-            <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 relative ${isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''}`}>
-              <SwapCard onSwapComplete={() => setIsSwapCompleted(true)} isCompleted={isSwapCompleted} />
-            </div>
-            <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 relative ${!isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''} ${isBridgeCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''}`}>
-              <BridgeCard 
-                isDisabled={!isSwapCompleted} 
-                onBridgeComplete={() => setIsBridgeCompleted(true)}
-              />
-            </div>
-          </TooltipProvider>
-        </div>
       </main>
     </Background>
   );
