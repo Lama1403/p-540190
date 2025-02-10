@@ -1,10 +1,29 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 
 export const BridgeCard: React.FC = () => {
+  const [amount, setAmount] = useState<string>('');
+  const maxAmount = 1000; // This would typically come from your wallet/balance
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    // Only allow numbers and decimals
+    if (value === '' || /^\d*\.?\d*$/.test(value)) {
+      setAmount(value);
+    }
+  };
+
+  const handleMaxClick = () => {
+    setAmount(maxAmount.toString());
+  };
+
+  const handleHalfClick = () => {
+    setAmount((maxAmount / 2).toString());
+  };
+
   return (
     <Card className="w-full max-w-[474.86px] bg-[rgba(30,29,29,0.5)] shadow-lg rounded-[15px] p-[35px] border-0">
       <CardContent className="p-0 flex flex-col items-center gap-[19px] w-full max-w-[404.86px]">
@@ -68,15 +87,23 @@ export const BridgeCard: React.FC = () => {
             <div className="flex-1 mr-4">
               <input 
                 type="text"
+                value={amount}
+                onChange={handleInputChange}
                 className="bg-transparent font-['Montserrat'] font-bold text-[33px] leading-[120%] tracking-[-0.02em] text-white w-full focus:outline-none"
                 placeholder="0.0"
               />
             </div>
             <div className="flex flex-col gap-[11px] h-full justify-center">
-              <button className="w-[60.38px] h-[28.24px] bg-[#2B2970] rounded-[78.5256px] font-['Montserrat'] font-bold text-[10.3036px] leading-[120%] text-[#87A1FF] capitalize">
+              <button 
+                onClick={handleMaxClick}
+                className="w-[60.38px] h-[28.24px] bg-[#2B2970] rounded-[78.5256px] font-['Montserrat'] font-bold text-[10.3036px] leading-[120%] text-[#87A1FF] capitalize"
+              >
                 Max
               </button>
-              <button className="w-[60.38px] h-[28.24px] bg-[#173C3F] rounded-[78.5256px] font-['Montserrat'] font-bold text-[10.3036px] leading-[120%] text-[#00D0C6] capitalize">
+              <button 
+                onClick={handleHalfClick}
+                className="w-[60.38px] h-[28.24px] bg-[#173C3F] rounded-[78.5256px] font-['Montserrat'] font-bold text-[10.3036px] leading-[120%] text-[#00D0C6] capitalize"
+              >
                 Half
               </button>
             </div>
