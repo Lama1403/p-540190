@@ -35,7 +35,7 @@ export const TokenInfo = () => {
       <TooltipContent 
         side="top" 
         align="center" 
-        className="bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl"
+        className="bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-xl shadow-2xl"
         sideOffset={5}
       >
         <p className="text-sm">Token types being bridged between networks</p>
