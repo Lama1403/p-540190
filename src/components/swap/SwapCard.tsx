@@ -9,7 +9,7 @@ import { NetworkSelector } from "./NetworkSelector";
 
 export const SwapCard: React.FC = () => {
   return (
-    <Card className="w-[474.86px] bg-[rgba(30,29,29,0.5)] shadow-lg rounded-[15px] p-[35px]">
+    <Card className="w-[474.86px] bg-[rgba(30,29,29,0.5)] shadow-lg rounded-[15px] p-[35px] border-0">
       <CardContent className="p-0 flex flex-col items-center gap-[17px] w-[404.86px]">
         <SwapHeader 
           title="1- Swap"
