@@ -10,6 +10,7 @@ import { AmountInput } from "./components/AmountInput";
 
 export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = true }) => {
   const [amount, setAmount] = useState<string>('');
+  const [buttonText, setButtonText] = useState<string>('Bridge');
   const maxAmount = 1000;
   const { toast } = useToast();
 
@@ -44,6 +45,7 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
 
   const handleBridge = () => {
     if (!amount) {
+      setButtonText('Enter Amount');
       toast({
         title: "⚠️ Error",
         description: "Please enter an amount to bridge",
@@ -51,9 +53,11 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
         className: "bg-black/10 backdrop-blur-lg border-red-500/20 text-red-500 rounded-[15px] shadow-2xl animate-fade-in",
         duration: 3000,
       });
+      setTimeout(() => setButtonText('Bridge'), 3000);
       return;
     }
     
+    setButtonText('Initiating Bridge...');
     toast({
       title: "🌉 Bridge Initiated",
       description: `Bridging ${amount} ZIL to Zilliqa Network...`,
@@ -63,6 +67,7 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
     });
 
     setTimeout(() => {
+      setButtonText('Processing...');
       toast({
         title: "⏳ Processing Bridge",
         description: "Please wait while we process your transaction...",
@@ -70,6 +75,9 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
         className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-fade-in",
         duration: 2500,
       });
+      
+      // Reset button text after processing
+      setTimeout(() => setButtonText('Bridge'), 2500);
     }, 2000);
   };
 
@@ -98,7 +106,7 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
         onClick={handleBridge}
         disabled={isDisabled}
       >
-        Bridge
+        {buttonText}
       </StyledButton>
     </StyledCard>
   );
