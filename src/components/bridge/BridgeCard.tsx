@@ -99,7 +99,7 @@ export const BridgeCard: React.FC<{
           description: "Your tokens have been successfully bridged",
           variant: "default",
           className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-fade-in",
-          duration: 3000,
+          duration: 4000,
         });
       }, 2500);
     }, 2000);

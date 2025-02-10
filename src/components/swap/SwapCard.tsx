@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { StyledCard } from "@/components/ui/styled-card";
 import { CardHeader } from "@/components/shared/CardHeader";
@@ -49,11 +48,9 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
           description: "You can now proceed to bridge your tokens",
           variant: "default",
           className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-fade-in",
-          duration: 3000,
+          duration: 4000,
         });
         onSwapComplete?.();
-        // Reset button text after showing success
-        setTimeout(() => setButtonText("Swap"), 2000);
       }, 2000);
     }, 1500);
   };
