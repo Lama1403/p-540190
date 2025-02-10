@@ -1,8 +1,11 @@
 
 import React from 'react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { useToast } from "@/hooks/use-toast";
 
 export const Navbar = () => {
+  const { toast } = useToast();
+
   return (
     <nav className="box-border flex flex-row justify-between items-center px-10 h-[72.4px] w-full border-b border-[#333333]">
       {/* Left side - Logo and Upgrade text */}
@@ -24,8 +27,9 @@ export const Navbar = () => {
           openChainModal,
           openConnectModal,
           mounted,
+          authenticationStatus,
         }) => {
-          const ready = mounted;
+          const ready = mounted && authenticationStatus !== 'loading';
           const connected = ready && account && chain;
 
           return (
@@ -34,10 +38,30 @@ export const Navbar = () => {
                 if (!connected) {
                   return (
                     <button
-                      onClick={openConnectModal}
+                      onClick={() => {
+                        openConnectModal();
+                        toast({
+                          title: "Connecting Wallet",
+                          description: "Please select your wallet to connect...",
+                          variant: "default",
+                          className: "bg-[#1A1F2C] border-[#9b87f5] text-white rounded-lg shadow-lg animate-fade-in",
+                          duration: 5000,
+                        });
+                      }}
                       className="flex items-center justify-center h-[34.73px] px-[9px] bg-[#1E1D1D] rounded-lg text-white font-montserrat font-semibold"
                     >
                       Connect Wallet
+                    </button>
+                  );
+                }
+
+                if (chain.unsupported) {
+                  return (
+                    <button
+                      onClick={openChainModal}
+                      className="flex items-center justify-center h-[34.73px] px-[9px] bg-[#ea384c] rounded-lg text-white font-montserrat font-semibold"
+                    >
+                      Wrong Network
                     </button>
                   );
                 }

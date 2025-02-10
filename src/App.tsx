@@ -34,6 +34,8 @@ const wagmiConfig = createConfig({
     ], { rank: true }),
   },
   connectors,
+  retryCount: 3,
+  retryDelay: 1500,
 });
 
 const App = () => (
@@ -45,6 +47,7 @@ const App = () => (
           borderRadius: 'medium',
         })}
         coolMode
+        showRecentTransactions={true}
       >
         <TooltipProvider>
           <Toaster />
