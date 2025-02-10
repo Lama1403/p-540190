@@ -82,40 +82,40 @@ const Index = () => {
               background: `
                 linear-gradient(
                   125deg,
-                  rgba(82, 46, 255, 0.4) -15%,
-                  rgba(82, 46, 255, 0.2) 0%,
+                  rgba(51, 51, 51, 0.4) -15%,
+                  rgba(85, 85, 85, 0.2) 0%,
                   transparent 25%
                 ),
                 radial-gradient(
                   circle at 100% 0%,
-                  rgba(0, 208, 198, 0.6) -20%,
-                  rgba(0, 208, 198, 0.3) 0%,
-                  rgba(0, 208, 198, 0.2) 30%,
+                  rgba(136, 136, 136, 0.6) -20%,
+                  rgba(153, 153, 153, 0.3) 0%,
+                  rgba(170, 170, 170, 0.2) 30%,
                   transparent 60%
                 ),
                 conic-gradient(
                   from 315deg at 90% 10%,
                   transparent -45deg,
-                  rgba(0, 208, 198, 0.4) 0deg,
+                  rgba(204, 204, 204, 0.4) 0deg,
                   transparent 45deg
                 ),
                 radial-gradient(
                   circle at 0% 0%,
-                  rgba(82, 46, 255, 0.2) 0%,
-                  rgba(82, 46, 255, 0.1) 20%,
+                  rgba(51, 51, 51, 0.2) 0%,
+                  rgba(85, 85, 85, 0.1) 20%,
                   transparent 40%
                 ),
                 linear-gradient(
                   135deg,
-                  rgba(82, 46, 255, 0.9) 0%,
-                  rgba(0, 208, 198, 0.9) 100%
+                  rgba(34, 34, 34, 0.9) 0%,
+                  rgba(68, 68, 68, 0.9) 100%
                 )
               `,
               backgroundBlendMode: "screen, normal, soft-light, soft-light, normal",
             }} />
             <div className="relative p-8 text-center space-y-8 animate-scale-in">
               <div className="relative">
-                <div className="w-24 h-24 rounded-full bg-gradient-to-r from-[#00D0C6] to-[#522EFF] flex items-center justify-center mx-auto animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]">
+                <div className="w-24 h-24 rounded-full bg-gradient-to-r from-gray-700 to-gray-900 flex items-center justify-center mx-auto animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]">
                   <Star className="w-12 h-12 text-white animate-[spin_4s_linear_infinite]" />
                 </div>
                 <div className="absolute -top-4 -right-4">
