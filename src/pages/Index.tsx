@@ -9,19 +9,19 @@ const Index = () => {
       <main 
         style={{
           width: "100%",
-          minHeight: "100vh", // Changed from height to minHeight
+          minHeight: "100vh",
           padding: "1rem",
           display: "flex",
-          alignItems: "center",
+          alignItems: "stretch", // Changed from center to stretch
           justifyContent: "center",
           gap: "2rem",
           flexWrap: "wrap"
         }}
       >
-        <div className="w-full max-w-md">
+        <div className="w-full max-w-md h-full"> {/* Added h-full */}
           <SwapCard />
         </div>
-        <div className="w-full max-w-md">
+        <div className="w-full max-w-md h-full"> {/* Added h-full */}
           <BridgeCard />
         </div>
       </main>
