@@ -8,6 +8,7 @@ const Index = () => {
       <main 
         style={{
           width: "100%",
+          height: "100vh",
           padding: "1rem",
           display: "flex",
           alignItems: "center",
