@@ -1,5 +1,6 @@
 
 import React from 'react';
+// import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 export const CustomNavbar = () => {
   return (
@@ -29,9 +30,9 @@ export const CustomNavbar = () => {
         </svg>
       </div>
       
-      {/* Right side - Wallet Connection (temporarily disabled) */}
+      {/* Right side - Wallet Connection */}
       <div className="flex items-center">
-        {/* Temporarily disabled
+        {/* 
         <ConnectButton 
           chainStatus="icon"
           showBalance={{
@@ -45,4 +46,3 @@ export const CustomNavbar = () => {
     </nav>
   );
 };
-
