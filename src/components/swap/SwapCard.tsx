@@ -73,9 +73,9 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
             </div>
           </TooltipTrigger>
           <TooltipContent 
-            side="right" 
+            side="top" 
             align="center" 
-            className="bg-[#1A1F2C] text-white border-[#9b87f5] shadow-lg"
+            className="bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-xl shadow-2xl"
             sideOffset={5}
           >
             <p className="text-sm">Your connected wallet address and current balance</p>
@@ -92,9 +92,9 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
             </div>
           </TooltipTrigger>
           <TooltipContent 
-            side="right" 
+            side="top" 
             align="center" 
-            className="bg-[#1A1F2C] text-white border-[#9b87f5] shadow-lg"
+            className="bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-xl shadow-2xl"
             sideOffset={5}
           >
             <p className="text-sm">Convert your Interim ZIL tokens to Bridged ERC-20 ZIL (eZIL)</p>
@@ -110,9 +110,9 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
             </div>
           </TooltipTrigger>
           <TooltipContent 
-            side="right" 
+            side="top" 
             align="center" 
-            className="bg-[#1A1F2C] text-white border-[#9b87f5] shadow-lg"
+            className="bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-xl shadow-2xl"
             sideOffset={5}
           >
             <p className="text-sm">The network where your tokens will be swapped</p>
@@ -126,3 +126,4 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
     </StyledCard>
   );
 };
+

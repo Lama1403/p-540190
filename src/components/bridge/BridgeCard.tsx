@@ -106,9 +106,9 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
           </div>
         </TooltipTrigger>
         <TooltipContent 
-          side="right" 
+          side="top" 
           align="center" 
-          className="bg-[#1A1F2C] text-white border-[#8E9196] shadow-lg"
+          className="bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-xl shadow-2xl"
           sideOffset={5}
         >
           <p className="text-sm">Source and destination addresses for the bridge transaction</p>
@@ -136,9 +136,9 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
           </div>
         </TooltipTrigger>
         <TooltipContent 
-          side="right" 
+          side="top" 
           align="center" 
-          className="bg-[#1A1F2C] text-white border-[#8E9196] shadow-lg"
+          className="bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-xl shadow-2xl"
           sideOffset={5}
         >
           <p className="text-sm">Token types being bridged between networks</p>
@@ -176,9 +176,9 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
           </div>
         </TooltipTrigger>
         <TooltipContent 
-          side="right" 
+          side="top" 
           align="center" 
-          className="bg-[#1A1F2C] text-white border-[#8E9196] shadow-lg"
+          className="bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-xl shadow-2xl"
           sideOffset={5}
         >
           <p className="text-sm">Enter the amount of tokens you want to bridge</p>
@@ -191,3 +191,4 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
     </StyledCard>
   );
 };
+
