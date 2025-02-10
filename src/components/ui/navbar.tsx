@@ -16,15 +16,21 @@ export const Navbar = () => {
 
       {/* Right side - Wallet info */}
       <div className="flex items-center gap-2">
-        {/* ZIL Amount */}
-        <div className="flex items-center justify-center px-4 py-2 bg-[#1A1A1A] rounded-lg">
-          <span className="text-white font-medium">2039 ZIL</span>
+        {/* Balance Container */}
+        <div className="flex items-center justify-center h-[34.73px] px-[9px] bg-[#1E1D1D] rounded-lg">
+          <span className="font-montserrat font-semibold text-[15px] leading-[46px] text-white">
+            2039 ZIL
+          </span>
         </div>
         
-        {/* Address */}
-        <div className="flex items-center gap-2 px-4 py-2 bg-[#1A1A1A] rounded-lg">
-          <span className="text-white/80 text-sm">0x1a2b...910j</span>
-          <div className="w-6 h-6 rounded-full bg-[#97CFE5]" />
+        {/* Wallet Address Container */}
+        <div className="flex items-center h-[34.73px] px-[9px] gap-[7px] bg-[#1E1D1D] rounded-lg">
+          <div className="flex items-center gap-[5px] px-[5px] py-[3px] bg-[#333333] rounded-[5px]">
+            <span className="font-montserrat font-semibold text-[11px] leading-[120%] text-white/80 underline">
+              0x1a2b...910j
+            </span>
+            <div className="w-[18.97px] h-[18.95px] rounded-full bg-[#97CFE5]" />
+          </div>
         </div>
       </div>
     </nav>
