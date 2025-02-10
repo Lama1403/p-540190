@@ -6,9 +6,10 @@ import { mainnet, sepolia } from 'wagmi/chains';
 
 const walletProjectId = '965d2688f2fc05f0385e035cf0768d6e';
 
-const { wallets } = getDefaultWallets({
+const { connectors } = getDefaultWallets({
   appName: 'ZIL Bridge',
   projectId: walletProjectId,
+  chains: [mainnet, sepolia],
 });
 
 export const config = createConfig({
@@ -17,7 +18,8 @@ export const config = createConfig({
     [mainnet.id]: http(),
     [sepolia.id]: http(),
   },
-  connectors: wallets,
+  connectors,
 });
 
 export const chains = [mainnet, sepolia];
+
