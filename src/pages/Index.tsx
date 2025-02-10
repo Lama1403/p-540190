@@ -2,7 +2,7 @@
 import { SwapCard } from "@/components/swap/SwapCard";
 import { BridgeCard } from "@/components/bridge/BridgeCard";
 import { Background } from "@/components/ui/background";
-import { Navbar } from "@/components/ui/navbar";
+import { CustomNavbar } from "@/components/layout/CustomNavbar";
 import { useState } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
@@ -11,7 +11,7 @@ const Index = () => {
 
   return (
     <Background>
-      <Navbar />
+      <CustomNavbar />
       <main 
         style={{
           width: "100%",
@@ -38,3 +38,4 @@ const Index = () => {
 };
 
 export default Index;
+
