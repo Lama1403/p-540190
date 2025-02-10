@@ -33,6 +33,14 @@ export const SwapCard: React.FC = () => {
         />
       </div>
       
+      <div className="flex flex-row justify-between items-center p-[15px] w-full h-[97.49px] bg-gradient-to-r from-[rgba(78,78,78,0.3)] via-[rgba(32,40,50,0.25)] to-[rgba(78,78,78,0.3)] rounded-[15px] transition-all hover:from-[rgba(88,88,88,0.35)] hover:via-[rgba(42,50,60,0.3)] hover:to-[rgba(88,88,88,0.35)] focus-within:ring-2 focus-within:ring-[#2C9297] focus-within:ring-opacity-30">
+        <input 
+          type="text"
+          className="bg-transparent font-['Montserrat'] font-bold text-[33px] leading-[120%] tracking-[-0.02em] text-white w-full focus:outline-none"
+          placeholder="0.0"
+        />
+      </div>
+      
       <StyledButton variant="primary">
         Swap
       </StyledButton>
