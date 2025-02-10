@@ -6,7 +6,7 @@ import { CustomNavbar } from "@/components/layout/CustomNavbar";
 import { PageHeader } from "@/components/ui/page-header";
 import { useState } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Trophy } from "lucide-react";
+import { Sparkles, Star } from "lucide-react";
 
 const Index = () => {
   const [isSwapCompleted, setIsSwapCompleted] = useState(false);
@@ -27,13 +27,27 @@ const Index = () => {
         }}
       >
         {isBridgeCompleted && (
-          <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center animate-fade-in">
-            <div className="text-center space-y-4 animate-scale-in">
-              <div className="w-20 h-20 rounded-full bg-custom-primary flex items-center justify-center mx-auto animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]">
-                <Trophy className="w-10 h-10 text-white" />
+          <div className="fixed inset-0 bg-gradient-to-br from-purple-900/90 via-black/80 to-blue-900/90 backdrop-blur-sm z-50 flex items-center justify-center animate-fade-in">
+            <div className="text-center space-y-8 animate-scale-in">
+              <div className="relative">
+                <div className="w-24 h-24 rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#D946EF] flex items-center justify-center mx-auto animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]">
+                  <Star className="w-12 h-12 text-white animate-[spin_4s_linear_infinite]" />
+                </div>
+                <div className="absolute -top-4 -right-4">
+                  <Sparkles className="w-8 h-8 text-[#F97316] animate-[bounce_2s_infinite]" />
+                </div>
+                <div className="absolute -bottom-4 -left-4">
+                  <Sparkles className="w-8 h-8 text-[#0EA5E9] animate-[bounce_2s_infinite_0.5s]" />
+                </div>
               </div>
-              <h2 className="text-3xl font-bold text-white">Level Up Complete!</h2>
-              <p className="text-gray-300">Your tokens have been successfully upgraded to Zilliqa Network</p>
+              <div className="space-y-4">
+                <h2 className="text-4xl font-bold bg-gradient-to-r from-[#F97316] via-[#8B5CF6] to-[#0EA5E9] text-transparent bg-clip-text animate-[pulse_2s_ease-in-out_infinite]">
+                  Power Up Complete!
+                </h2>
+                <p className="text-[#E5DEFF] text-lg">
+                  Your tokens have ascended to the Zilliqa Network ✨
+                </p>
+              </div>
             </div>
           </div>
         )}
