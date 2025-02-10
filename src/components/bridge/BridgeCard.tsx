@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ChevronRight } from "lucide-react";
 import { StyledCard } from "@/components/ui/styled-card";
@@ -203,6 +204,7 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
       <StyledButton 
         variant="primary" 
         onClick={handleBridge}
+        disabled={isDisabled}
       >
         Bridge
       </StyledButton>

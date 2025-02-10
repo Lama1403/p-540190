@@ -40,4 +40,3 @@ export const StyledButton: React.FC<StyledButtonProps> = ({
     </Button>
   );
 };
-
