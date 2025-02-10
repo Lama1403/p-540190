@@ -24,7 +24,7 @@ export const StyledButton: React.FC<StyledButtonProps> = ({
       "before:absolute before:inset-[1px] before:rounded-[127.434px] before:bg-[#173C3F] before:z-[1]",
       "after:absolute after:inset-0 after:rounded-[127.434px] after:bg-[length:400%_400%]",
       "after:bg-gradient-to-r after:from-[#00D0C6] after:via-[#0FA0CE]/90 after:via-[#1EAEDB]/80 after:to-[#0EA5E9]",
-      "after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-300 after:animate-[gradient_30s_ease_infinite]",
+      "after:opacity-0 hover:after:opacity-100 after:transition-all after:duration-700 after:ease-in-out after:animate-[gradient_30s_cubic-bezier(0.4,0,0.2,1)_infinite]",
       isCompleted && "after:opacity-100 cursor-not-allowed shadow-lg hover:shadow-xl hover:scale-[1.02] animate-fade-in"
     ),
     max: "w-[60.38px] h-[28.24px] bg-custom-accent rounded-[78.5256px] font-montserrat font-bold text-[10.3036px] leading-[120%] text-custom-accent2 capitalize transition-colors hover:bg-custom-primary hover:text-white active:bg-[#00b8af]",
@@ -40,4 +40,3 @@ export const StyledButton: React.FC<StyledButtonProps> = ({
     </Button>
   );
 };
-
