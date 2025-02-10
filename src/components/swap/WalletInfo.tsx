@@ -18,7 +18,7 @@ export const WalletInfo: React.FC<WalletInfoProps> = ({ address, balance }) => {
             {address}
           </span>
         </div>
-        <div className="flex flex-row justify-center items-center gap-[5px]">
+        <div className="flex flex-row justify-center items-center gap-[5px] ml-auto">
           <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-[#C2C2C2]">
             Balance
           </span>
