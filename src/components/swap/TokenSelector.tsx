@@ -15,7 +15,7 @@ export const TokenSelector: React.FC<TokenSelectorProps> = ({ fromToken, toToken
       mainText={fromToken}
       centerIcon={<ChevronRight className="w-[14px] h-[12px] text-white" />}
       rightIcon={<></>}
-      rightText={toToken}
+      mainRightText={toToken}
     />
   );
 };
