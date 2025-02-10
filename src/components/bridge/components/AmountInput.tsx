@@ -39,15 +39,15 @@ export const AmountInput: React.FC<AmountInputProps> = ({
                   <div className="flex flex-col gap-[11px] h-full justify-center">
                     <InputLabelButton 
                       onClick={onMaxClick}
-                      variant="max"
+                      variant="half"
                     >
                       Max
                     </InputLabelButton>
                     <InputLabelButton 
                       onClick={onHalfClick}
-                      variant="half"
+                      variant="max"
                     >
-                      Half
+                      Min
                     </InputLabelButton>
                   </div>
                 </div>
@@ -67,3 +67,4 @@ export const AmountInput: React.FC<AmountInputProps> = ({
     </Tooltip>
   );
 };
+
