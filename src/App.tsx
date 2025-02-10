@@ -17,7 +17,6 @@ import '@rainbow-me/rainbowkit/styles.css';
 
 const queryClient = new QueryClient();
 
-// Get your WalletConnect Project ID at https://cloud.walletconnect.com
 const projectId = '965d2688f2fc05f0385e035cf0768d6e';
 
 const { connectors } = getDefaultWallets({
@@ -28,7 +27,7 @@ const { connectors } = getDefaultWallets({
 const wagmiConfig = createConfig({
   chains: [mainnet],
   transports: {
-    [mainnet.id]: http('https://ethereum.publicnode.com'),
+    [mainnet.id]: http('https://rpc.ankr.com/eth'),
   },
   connectors,
 });
