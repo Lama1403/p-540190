@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronRight } from "lucide-react";
 import { StyledButton } from "@/components/ui/styled-button";
+import { InputLabelButton } from "@/components/ui/input-label-button";
 
 export const BridgeCard: React.FC = () => {
   const [amount, setAmount] = useState<string>('');
@@ -93,18 +94,18 @@ export const BridgeCard: React.FC = () => {
               />
             </div>
             <div className="flex flex-col gap-[11px] h-full justify-center">
-              <StyledButton 
+              <InputLabelButton 
                 onClick={handleMaxClick}
                 variant="max"
               >
                 Max
-              </StyledButton>
-              <StyledButton 
+              </InputLabelButton>
+              <InputLabelButton 
                 onClick={handleHalfClick}
                 variant="half"
               >
                 Half
-              </StyledButton>
+              </InputLabelButton>
             </div>
           </div>
         </div>
