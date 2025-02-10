@@ -18,7 +18,7 @@ import '@rainbow-me/rainbowkit/styles.css';
 const queryClient = new QueryClient();
 
 // Get your WalletConnect Project ID at https://cloud.walletconnect.com
-const projectId = 'f96b598e64c9c6571f7d3dbd8ace7375';
+const projectId = '965d2688f2fc05f0385e035cf0768d6e';
 
 const { connectors } = getDefaultWallets({
   appName: 'My RainbowKit App',
