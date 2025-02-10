@@ -200,7 +200,10 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
         </TooltipContent>
       </Tooltip>
 
-      <StyledButton variant="primary" onClick={handleBridge}>
+      <StyledButton 
+        variant="primary" 
+        onClick={handleBridge}
+      >
         Bridge
       </StyledButton>
     </StyledCard>
