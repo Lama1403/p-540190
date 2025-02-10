@@ -28,7 +28,7 @@ const { connectors } = getDefaultWallets({
 const wagmiConfig = createConfig({
   chains: [mainnet],
   transports: {
-    [mainnet.id]: http('https://eth.public-rpc.com'),
+    [mainnet.id]: http('https://ethereum.publicnode.com'),
   },
   connectors,
 });
