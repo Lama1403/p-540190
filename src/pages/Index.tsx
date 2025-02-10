@@ -23,10 +23,10 @@ const Index = () => {
           flexWrap: "wrap"
         }}
       >
-        <div className={`w-full max-w-md h-full flex items-center transition-opacity duration-300 ${isSwapCompleted ? 'opacity-50' : 'opacity-100'}`}>
+        <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 ${isSwapCompleted ? 'opacity-50 scale-95' : 'opacity-100 scale-100'}`}>
           <SwapCard onSwapComplete={() => setIsSwapCompleted(true)} />
         </div>
-        <div className="w-full max-w-md h-full flex items-center">
+        <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 ${!isSwapCompleted ? 'opacity-50 scale-95' : 'opacity-100 scale-100'}`}>
           <BridgeCard isDisabled={!isSwapCompleted} />
         </div>
       </main>
