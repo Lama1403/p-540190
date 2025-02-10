@@ -69,7 +69,7 @@ export const BridgeCard: React.FC = () => {
             className="bg-transparent font-['Montserrat'] font-bold text-[33px] leading-[120%] tracking-[-0.02em] text-white w-[314.48px] focus:outline-none"
             placeholder="0.0"
           />
-          <div className="flex flex-col gap-[11px] pr-[15px]">
+          <div className="flex flex-col gap-[11px]">
             <button className="w-[60.38px] h-[28.24px] bg-[#2B2970] rounded-[78.5256px] font-['Montserrat'] font-bold text-[10.3036px] leading-[120%] text-[#87A1FF] capitalize">
               Max
             </button>
