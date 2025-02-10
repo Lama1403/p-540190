@@ -143,19 +143,23 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
         className={`relative transition-all duration-300 ${
           isCompleted 
             ? "bg-gradient-to-r from-[#00D0C6] to-[#522EFF] border-[#522EFF] cursor-not-allowed shadow-lg hover:shadow-xl hover:scale-[1.02] animate-fade-in" 
-            : "bg-[#1E1D1D] border border-transparent hover:border-transparent hover:shadow-[0_0_30px_rgba(0,208,198,0.15),0_0_15px_rgba(0,208,198,0.1),0_0_45px_rgba(82,46,255,0.15)] before:absolute before:inset-[1px] before:rounded-[14px] before:bg-[#1E1D1D] before:z-[1] after:absolute after:inset-0 after:rounded-[15px] after:bg-[length:200%_200%] after:bg-gradient-to-r after:from-[#00D0C6] after:via-[#2E3FFF] after:to-[#522EFF] after:opacity-0 hover:after:opacity-100 after:transition-opacity after:animate-[gradient_6s_ease_infinite]"
+            : "bg-[#1E1D1D] border border-transparent hover:border-transparent hover:shadow-[0_0_30px_rgba(0,208,198,0.15),0_0_15px_rgba(0,208,198,0.1),0_0_45px_rgba(82,46,255,0.15)] relative p-[1px] group"
         }`}
       >
-        <span className="relative z-[2]">
-          {isCompleted ? (
-            <div className="flex items-center gap-2">
-              <Check className="w-4 h-4 animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]" /> 
-              <span className="animate-fade-in">Success</span>
+        {!isCompleted && (
+          <>
+            <div className="absolute inset-0 rounded-[15px] bg-gradient-to-r from-[#1A1A1A] via-[#243949] to-[#404040] opacity-0 group-hover:opacity-100 animate-[gradient_6s_ease_infinite] group-hover:bg-[length:200%_200%]" />
+            <div className="relative bg-[#1E1D1D]/80 rounded-[15px] px-4 py-2 z-[2]">
+              Swap
             </div>
-          ) : (
-            "Swap"
-          )}
-        </span>
+          </>
+        )}
+        {isCompleted && (
+          <div className="flex items-center gap-2">
+            <Check className="w-4 h-4 animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]" /> 
+            <span className="animate-fade-in">Success</span>
+          </div>
+        )}
       </StyledButton>
     </StyledCard>
   );
