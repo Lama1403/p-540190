@@ -1,3 +1,4 @@
+
 import { SwapCard } from "@/components/swap/SwapCard";
 import { BridgeCard } from "@/components/bridge/BridgeCard";
 import { Background } from "@/components/ui/background";
@@ -75,7 +76,41 @@ const Index = () => {
         </div>
         {isBridgeCompleted && (
           <div className="fixed inset-0 z-50 flex items-center justify-center">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#00D0C6] to-[#522EFF] backdrop-blur-lg" />
+            <div className="absolute inset-0" style={{
+              background: `
+                linear-gradient(
+                  125deg,
+                  rgba(82, 46, 255, 0.4) -15%,
+                  rgba(82, 46, 255, 0.2) 0%,
+                  transparent 25%
+                ),
+                radial-gradient(
+                  circle at 100% 0%,
+                  rgba(0, 208, 198, 0.6) -20%,
+                  rgba(0, 208, 198, 0.3) 0%,
+                  rgba(0, 208, 198, 0.2) 30%,
+                  transparent 60%
+                ),
+                conic-gradient(
+                  from 315deg at 90% 10%,
+                  transparent -45deg,
+                  rgba(0, 208, 198, 0.4) 0deg,
+                  transparent 45deg
+                ),
+                radial-gradient(
+                  circle at 0% 0%,
+                  rgba(82, 46, 255, 0.2) 0%,
+                  rgba(82, 46, 255, 0.1) 20%,
+                  transparent 40%
+                ),
+                linear-gradient(
+                  135deg,
+                  rgba(82, 46, 255, 0.9) 0%,
+                  rgba(0, 208, 198, 0.9) 100%
+                )
+              `,
+              backgroundBlendMode: "screen, normal, soft-light, soft-light, normal",
+            }} />
             <div className="relative p-8 text-center space-y-8 animate-scale-in">
               <div className="relative">
                 <div className="w-24 h-24 rounded-full bg-gradient-to-r from-[#00D0C6] to-[#522EFF] flex items-center justify-center mx-auto animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]">
