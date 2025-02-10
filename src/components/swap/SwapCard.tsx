@@ -33,14 +33,6 @@ export const SwapCard: React.FC = () => {
         />
       </div>
       
-      <div className="flex flex-row justify-between items-center p-[15px] w-full h-[97.49px] bg-gradient-to-r from-[rgba(78,78,78,0.3)] via-[rgba(32,40,50,0.25)] to-[rgba(78,78,78,0.3)] rounded-[15px]">
-        <input 
-          type="text"
-          className="bg-transparent font-['Montserrat'] font-bold text-[33px] leading-[120%] tracking-[-0.02em] text-white w-full focus:outline-none"
-          placeholder="0.0"
-        />
-      </div>
-      
       <StyledButton variant="primary">
         Swap
       </StyledButton>
