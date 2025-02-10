@@ -8,6 +8,7 @@ interface InfoContainerProps {
   secondaryText?: string;
   rightText?: string;
   centerIcon?: ReactNode;
+  showBalanceLabel?: boolean; // New prop to control Balance label visibility
 }
 
 export const InfoContainer: React.FC<InfoContainerProps> = ({
@@ -16,7 +17,8 @@ export const InfoContainer: React.FC<InfoContainerProps> = ({
   mainText,
   secondaryText,
   rightText,
-  centerIcon
+  centerIcon,
+  showBalanceLabel = false // Default to false
 }) => {
   return (
     <div className="flex flex-row justify-between items-center p-[17px] gap-[8px] w-full h-[64px] min-h-[48px] bg-[#1E1D1D]/80 backdrop-blur-lg shadow-2xl rounded-[15px]">
@@ -48,9 +50,11 @@ export const InfoContainer: React.FC<InfoContainerProps> = ({
         <div className="flex flex-row items-center gap-[15px] ml-auto">
           {rightText && (
             <div className="flex flex-row items-center gap-[5px]">
-              <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-[#C2C2C2]">
-                Balance
-              </span>
+              {showBalanceLabel && (
+                <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-[#C2C2C2]">
+                  Balance
+                </span>
+              )}
               <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-white">
                 {rightText}
               </span>

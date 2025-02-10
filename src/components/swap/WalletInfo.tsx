@@ -16,6 +16,7 @@ export const WalletInfo: React.FC<WalletInfoProps> = () => {
       mainText={displayAddress}
       secondaryText="Wallet"
       rightText={displayBalance}
+      showBalanceLabel={true}
     />
   );
 };
