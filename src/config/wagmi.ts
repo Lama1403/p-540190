@@ -18,7 +18,6 @@ export const config = createConfig({
     [sepolia.id]: http('https://eth-sepolia.g.alchemy.com/v2/demo'),
   },
   connectors,
-  autoConnect: false, // This ensures the wallet starts disconnected
 });
 
 export const chains = [mainnet, sepolia];
