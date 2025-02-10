@@ -9,6 +9,7 @@ interface AmountInputProps {
   onMaxClick: () => void;
   onHalfClick: () => void;
   error?: boolean;
+  disabled?: boolean;
 }
 
 export const AmountInput: React.FC<AmountInputProps> = ({
@@ -16,14 +17,15 @@ export const AmountInput: React.FC<AmountInputProps> = ({
   onAmountChange,
   onMaxClick,
   onHalfClick,
-  error = false
+  error = false,
+  disabled = false
 }) => {
   const [activeButton, setActiveButton] = useState<'none' | 'max' | 'min'>('none');
 
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <div className="w-full transition-all duration-300 rounded-[15px] group">
+        <div className={`w-full transition-all duration-300 rounded-[15px] group ${disabled ? 'opacity-50 pointer-events-none' : ''}`}>
           <div className="relative p-[1px] rounded-[15px] group-hover:shadow-[0_0_30px_rgba(0,208,198,0.15),0_0_15px_rgba(0,208,198,0.1),0_0_45px_rgba(82,46,255,0.15)]">
             <div 
               className={`absolute inset-0 rounded-[15px] opacity-0 group-hover:opacity-100 animate-[gradient_50s_ease-in-out_infinite] group-hover:bg-[length:200%_200%] transition-all duration-[1500ms]
@@ -46,6 +48,7 @@ export const AmountInput: React.FC<AmountInputProps> = ({
                       onChange={onAmountChange}
                       className="bg-transparent font-montserrat font-bold text-[33px] leading-[120%] tracking-[-0.02em] text-white w-full focus:outline-none"
                       placeholder="0.0"
+                      disabled={disabled}
                     />
                   </div>
                   <div className="flex flex-col gap-[11px] h-full justify-center">
@@ -54,6 +57,7 @@ export const AmountInput: React.FC<AmountInputProps> = ({
                       variant="half"
                       onMouseEnter={() => !error && setActiveButton('max')}
                       onMouseLeave={() => !error && setActiveButton('none')}
+                      disabled={disabled}
                     >
                       Max
                     </InputLabelButton>
@@ -62,6 +66,7 @@ export const AmountInput: React.FC<AmountInputProps> = ({
                       variant="max"
                       onMouseEnter={() => !error && setActiveButton('min')}
                       onMouseLeave={() => !error && setActiveButton('none')}
+                      disabled={disabled}
                     >
                       Min
                     </InputLabelButton>
@@ -83,4 +88,3 @@ export const AmountInput: React.FC<AmountInputProps> = ({
     </Tooltip>
   );
 };
-

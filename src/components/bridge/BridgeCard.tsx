@@ -17,6 +17,7 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
   const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (isSuccess) return; // Prevent input changes if in success state
     const value = e.target.value;
     if (value === '' || /^\d*\.?\d*$/.test(value)) {
       setAmount(value);
@@ -24,6 +25,7 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
   };
 
   const handleMaxClick = () => {
+    if (isSuccess) return; // Prevent max click if in success state
     setAmount(maxAmount.toString());
     toast({
       title: "💎 Maximum Amount Set",
@@ -35,6 +37,7 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
   };
 
   const handleHalfClick = () => {
+    if (isSuccess) return; // Prevent half click if in success state
     setAmount((maxAmount / 2).toString());
     toast({
       title: "🎯 Half Amount Set",
@@ -113,6 +116,8 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
         onAmountChange={handleInputChange}
         onMaxClick={handleMaxClick}
         onHalfClick={handleHalfClick}
+        error={false}
+        disabled={isSuccess}
       />
 
       <StyledButton 
