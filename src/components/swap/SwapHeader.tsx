@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 interface SwapHeaderProps {
@@ -7,13 +8,15 @@ interface SwapHeaderProps {
 
 export const SwapHeader: React.FC<SwapHeaderProps> = ({ title, description }) => {
   return (
-    <header className="mb-6">
-      <div className="mb-2">
-        <h1 className="text-2xl font-semibold text-foreground">{title}</h1>
+    <header className="flex flex-col items-center gap-[15px] w-full">
+      <div className="flex flex-row items-center w-full">
+        <h1 className="font-['Montserrat'] font-bold text-[33px] leading-[120%] tracking-[-0.02em] text-[#E1E2E2] flex items-center w-full">
+          {title}
+        </h1>
       </div>
-      <div className="text-muted-foreground">
-        <p>{description}</p>
-      </div>
+      <p className="font-['Montserrat'] font-normal text-[12px] leading-[120%] tracking-[0.01em] text-[#E1E2E2] flex items-center w-full">
+        {description}
+      </p>
     </header>
   );
 };

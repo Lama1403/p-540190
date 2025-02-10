@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -8,28 +9,34 @@ import { NetworkSelector } from "./NetworkSelector";
 
 export const SwapCard: React.FC = () => {
   return (
-    <Card className="w-full max-w-md mx-auto">
-      <CardContent className="p-6">
+    <Card className="w-[474.86px] bg-[rgba(30,29,29,0.5)] shadow-lg rounded-[15px] p-[35px]">
+      <CardContent className="p-0 flex flex-col items-center gap-[17px] w-[404.86px]">
         <SwapHeader 
           title="1- Swap"
           description="Swap your interim ERC-20 ZIL for Bridged ERC-20 ZIL"
         />
         
-        <WalletInfo 
-          address="0xD81(...)C5af2"
-          balance="777,000"
-        />
+        <div className="w-full h-[2px] bg-[rgba(194,194,194,0.1)]" />
         
-        <TokenSelector 
-          fromToken="Interim ZIL"
-          toToken="eZIL"
-        />
+        <div className="flex flex-col items-start gap-[14px] w-full">
+          <WalletInfo 
+            address="0xD81(...)C5af2"
+            balance="777,000"
+          />
+          
+          <TokenSelector 
+            fromToken="Interim ZIL"
+            toToken="eZIL"
+          />
+          
+          <NetworkSelector 
+            network="Zilliqa"
+          />
+        </div>
         
-        <NetworkSelector 
-          network="Zilliqa"
-        />
-        
-        <Button className="w-full" size="lg">
+        <Button 
+          className="w-[207px] h-[33px] bg-[#173C3F] border border-[#00D0C6] rounded-[127.434px] text-white font-bold text-[15.5071px] leading-[120%] tracking-[-0.03em] capitalize"
+        >
           Swap
         </Button>
       </CardContent>

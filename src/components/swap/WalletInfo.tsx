@@ -1,5 +1,5 @@
+
 import React from 'react';
-import { Card, CardContent } from "@/components/ui/card";
 
 interface WalletInfoProps {
   address: string;
@@ -8,19 +8,25 @@ interface WalletInfoProps {
 
 export const WalletInfo: React.FC<WalletInfoProps> = ({ address, balance }) => {
   return (
-    <Card className="mb-4">
-      <CardContent className="p-4">
-        <div className="flex justify-between items-center">
-          <div>
-            <p className="text-sm text-muted-foreground mb-1">Wallet</p>
-            <p className="font-medium">{address}</p>
-          </div>
-          <div className="text-right">
-            <p className="text-sm text-muted-foreground mb-1">Balance</p>
-            <p className="font-medium">{balance}</p>
-          </div>
+    <div className="flex flex-row justify-between items-center p-[17px] gap-[8px] w-full h-[64px] min-h-[48px] bg-[#1E1D1D] shadow-sm rounded-[15px]">
+      <div className="flex flex-row items-center gap-[15px]">
+        <div className="flex flex-row items-center gap-[5px]">
+          <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-[#C2C2C2]">
+            Wallet
+          </span>
+          <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-white">
+            {address}
+          </span>
         </div>
-      </CardContent>
-    </Card>
+        <div className="flex flex-row justify-center items-center gap-[5px]">
+          <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-[#C2C2C2]">
+            Balance
+          </span>
+          <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-white">
+            {balance}
+          </span>
+        </div>
+      </div>
+    </div>
   );
 };
