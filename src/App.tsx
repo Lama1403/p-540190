@@ -11,7 +11,7 @@ import {
   darkTheme,
   getDefaultWallets
 } from '@rainbow-me/rainbowkit';
-import { createConfig, WagmiConfig, http, fallback } from 'wagmi';
+import { createConfig, WagmiConfig, http } from 'wagmi';
 import { mainnet } from 'wagmi/chains';
 import '@rainbow-me/rainbowkit/styles.css';
 
@@ -27,15 +27,9 @@ const { connectors } = getDefaultWallets({
 const wagmiConfig = createConfig({
   chains: [mainnet],
   transports: {
-    [mainnet.id]: fallback([
-      http('https://eth.llamarpc.com'),
-      http('https://rpc.ankr.com/eth'),
-      http('https://cloudflare-eth.com'),
-    ], { rank: true }),
+    [mainnet.id]: http('https://eth-mainnet.g.alchemy.com/v2/demo'),
   },
   connectors,
-  retryCount: 3,
-  retryDelay: 1500,
 });
 
 const App = () => (
