@@ -11,12 +11,7 @@ const Index = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "#000000",
-        backgroundImage: "url('https://images.unsplash.com/photo-1534884473008-38e5e89e0369?q=80&w=1974&auto=format&fit=crop')",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
+        backgroundColor: "#1e40af", // A solid blue background
       }}
     >
       <div className="w-full max-w-md">
