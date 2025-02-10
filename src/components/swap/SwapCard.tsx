@@ -17,7 +17,7 @@ export const SwapCard: React.FC = () => {
       title: "✨ Swap Initiated",
       description: "Converting Interim ZIL to Bridged ERC-20 ZIL...",
       variant: "default",
-      className: "bg-[#F2FCE2] border-[#9b87f5] text-[#1A1F2C] rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] backdrop-blur-sm animate-fade-in",
+      className: "bg-[#F2FCE2] border-[#9b87f5] text-[#1A1F2C] rounded-lg shadow-lg animate-fade-in",
       duration: 3000,
     });
 
@@ -27,20 +27,20 @@ export const SwapCard: React.FC = () => {
         title: "🔄 Processing",
         description: "Transaction in progress...",
         variant: "default",
-        className: "bg-[#D3E4FD] border-[#9b87f5] text-[#1A1F2C] rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] backdrop-blur-sm animate-fade-in",
+        className: "bg-[#D3E4FD] border-[#9b87f5] text-[#1A1F2C] rounded-lg shadow-lg animate-fade-in",
         duration: 2000,
       });
     }, 1500);
   };
 
   return (
-    <StyledCard className="bg-gradient-to-br from-[rgba(30,29,29,0.6)] to-[rgba(30,29,29,0.4)] backdrop-blur-md border border-[rgba(255,255,255,0.1)]">
+    <StyledCard>
       <SwapHeader 
         title="1- Swap"
         description="Swap your interim ERC-20 ZIL for Bridged ERC-20 ZIL"
       />
       
-      <div className="w-full h-[2px] bg-gradient-to-r from-transparent via-[rgba(194,194,194,0.2)] to-transparent" />
+      <div className="w-full h-[2px] bg-[rgba(194,194,194,0.1)]" />
       
       <div className="flex flex-col items-start gap-[14px] w-full">
         <WalletInfo 
@@ -58,11 +58,7 @@ export const SwapCard: React.FC = () => {
         />
       </div>
       
-      <StyledButton 
-        variant="primary" 
-        onClick={handleSwap}
-        className="bg-gradient-to-r from-[#9b87f5] to-[#7c6ad6] hover:from-[#8a76e5] hover:to-[#6c5ac6] transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
-      >
+      <StyledButton variant="primary" onClick={handleSwap}>
         Swap
       </StyledButton>
     </StyledCard>
