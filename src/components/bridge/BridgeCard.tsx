@@ -22,44 +22,56 @@ export const BridgeCard: React.FC = () => {
   const handleMaxClick = () => {
     setAmount(maxAmount.toString());
     toast({
-      title: "Maximum Amount Set",
+      title: "💎 Maximum Amount Set",
       description: `Set to maximum available: ${maxAmount} ZIL`,
       variant: "default",
-      className: "bg-[#1A1F2C] border-[#9b87f5] text-white rounded-lg shadow-lg animate-fade-in",
-      duration: 3000,
+      className: "bg-[#FEF7CD] border-[#9b87f5] text-[#1A1F2C] rounded-lg shadow-lg animate-scale-in",
+      duration: 2000,
     });
   };
 
   const handleHalfClick = () => {
     setAmount((maxAmount / 2).toString());
     toast({
-      title: "Half Amount Set",
+      title: "🎯 Half Amount Set",
       description: `Set to half of maximum: ${maxAmount / 2} ZIL`,
       variant: "default",
-      className: "bg-[#1A1F2C] border-[#9b87f5] text-white rounded-lg shadow-lg animate-fade-in",
-      duration: 3000,
+      className: "bg-[#FDE1D3] border-[#9b87f5] text-[#1A1F2C] rounded-lg shadow-lg animate-scale-in",
+      duration: 2000,
     });
   };
 
   const handleBridge = () => {
     if (!amount) {
       toast({
-        title: "Error",
+        title: "⚠️ Error",
         description: "Please enter an amount to bridge",
         variant: "destructive",
-        className: "bg-[#1A1F2C] border-[#ea384c] text-[#ea384c] rounded-lg shadow-lg animate-fade-in",
-        duration: 5000,
+        className: "bg-[#FFDEE2] border-[#ea384c] text-[#ea384c] rounded-lg shadow-lg animate-fade-in",
+        duration: 3000,
       });
       return;
     }
     
+    // Success toast
     toast({
-      title: "Bridge Initiated",
+      title: "🌉 Bridge Initiated",
       description: `Bridging ${amount} ZIL to Zilliqa Network...`,
       variant: "default",
-      className: "bg-[#1A1F2C] border-[#9b87f5] text-white rounded-lg shadow-lg animate-fade-in",
-      duration: 5000,
+      className: "bg-[#F2FCE2] border-[#9b87f5] text-[#1A1F2C] rounded-lg shadow-lg animate-fade-in",
+      duration: 3000,
     });
+
+    // Show progress toast after delay
+    setTimeout(() => {
+      toast({
+        title: "⏳ Processing Bridge",
+        description: "Please wait while we process your transaction...",
+        variant: "default",
+        className: "bg-[#D3E4FD] border-[#9b87f5] text-[#1A1F2C] rounded-lg shadow-lg animate-fade-in",
+        duration: 2500,
+      });
+    }, 2000);
   };
 
   return (

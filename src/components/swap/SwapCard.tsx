@@ -12,13 +12,25 @@ export const SwapCard: React.FC = () => {
   const { toast } = useToast();
 
   const handleSwap = () => {
+    // Success toast
     toast({
-      title: "Swap Initiated",
+      title: "✨ Swap Initiated",
       description: "Converting Interim ZIL to Bridged ERC-20 ZIL...",
       variant: "default",
-      className: "bg-[#1A1F2C] border-[#9b87f5] text-white rounded-lg shadow-lg animate-fade-in",
-      duration: 5000,
+      className: "bg-[#F2FCE2] border-[#9b87f5] text-[#1A1F2C] rounded-lg shadow-lg animate-fade-in",
+      duration: 3000,
     });
+
+    // Show progress toast after delay
+    setTimeout(() => {
+      toast({
+        title: "🔄 Processing",
+        description: "Transaction in progress...",
+        variant: "default",
+        className: "bg-[#D3E4FD] border-[#9b87f5] text-[#1A1F2C] rounded-lg shadow-lg animate-fade-in",
+        duration: 2000,
+      });
+    }, 1500);
   };
 
   return (
