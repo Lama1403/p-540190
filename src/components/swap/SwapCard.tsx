@@ -13,13 +13,16 @@ import { Check } from "lucide-react";
 interface SwapCardProps {
   onSwapComplete?: () => void;
   isCompleted?: boolean;
+  isDisabled?: boolean;
 }
 
-export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted }) => {
+export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted, isDisabled }) => {
   const { toast } = useToast();
   const [buttonText, setButtonText] = React.useState<string>("Swap");
 
   const handleSwap = () => {
+    if (isDisabled || isCompleted) return;
+    
     setButtonText("Initiating Swap...");
     // Success toast
     toast({
@@ -57,7 +60,7 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
   };
 
   return (
-    <StyledCard>
+    <StyledCard className={`transition-opacity duration-300 ${isDisabled ? 'opacity-50' : 'opacity-100'}`}>
       <div className="relative w-full">
         <CardHeader 
           title="1- Swap"
@@ -143,7 +146,7 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
       <StyledButton 
         variant="primary" 
         onClick={handleSwap}
-        disabled={isCompleted}
+        disabled={isDisabled || isCompleted}
         isCompleted={isCompleted}
       >
         {isCompleted ? (

@@ -9,7 +9,7 @@ import NotFound from "./pages/NotFound";
 import '@rainbow-me/rainbowkit/styles.css';
 import { RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
 import { WagmiProvider } from 'wagmi';
-import { config, chains } from './config/wagmi';
+import { config } from './config/wagmi';
 
 const queryClient = new QueryClient();
 
@@ -24,8 +24,6 @@ const App = () => (
           fontStack: 'system',
           overlayBlur: 'small',
         })}
-        chains={chains}
-        modalSize="compact"
       >
         <TooltipProvider>
           <Toaster />
@@ -43,4 +41,3 @@ const App = () => (
 );
 
 export default App;
-

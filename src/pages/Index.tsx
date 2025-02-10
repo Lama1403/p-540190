@@ -1,3 +1,4 @@
+
 import { SwapCard } from "@/components/swap/SwapCard";
 import { BridgeCard } from "@/components/bridge/BridgeCard";
 import { Background } from "@/components/ui/background";
@@ -7,12 +8,14 @@ import { useState, useEffect, useRef } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Sparkles, Star } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useAccount } from 'wagmi';
 
 const Index = () => {
   const [isSwapCompleted, setIsSwapCompleted] = useState(false);
   const [isBridgeCompleted, setIsBridgeCompleted] = useState(false);
   const bridgeRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
+  const { isConnected } = useAccount();
 
   useEffect(() => {
     if (isBridgeCompleted) {
@@ -59,8 +62,8 @@ const Index = () => {
         />
         <div className={`flex items-center justify-center gap-8 flex-wrap w-full ${isBridgeCompleted ? "backdrop-blur-sm bg-white/5" : ""}`}>
           <TooltipProvider delayDuration={0}>
-            <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 relative ${isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''}`}>
-              <SwapCard onSwapComplete={() => setIsSwapCompleted(true)} isCompleted={isSwapCompleted} />
+            <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 relative ${isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''} ${!isConnected ? 'opacity-50 scale-95 pointer-events-none' : ''}`}>
+              <SwapCard onSwapComplete={() => setIsSwapCompleted(true)} isCompleted={isSwapCompleted} isDisabled={!isConnected} />
             </div>
             <div 
               ref={bridgeRef}
