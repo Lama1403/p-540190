@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { WalletInfo } from '../swap/WalletInfo';
 
 export const Navbar = () => {
   return (
@@ -28,6 +29,9 @@ export const Navbar = () => {
           </defs>
         </svg>
       </div>
+
+      {/* Right side - Wallet Info */}
+      <WalletInfo />
     </nav>
   );
 };
