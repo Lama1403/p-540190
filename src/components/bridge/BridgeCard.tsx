@@ -157,24 +157,20 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
         <TooltipTrigger asChild>
           <div className="w-full transition-all duration-300 rounded-[15px] group">
             <div className="relative p-[1px] rounded-[15px] group-hover:shadow-[0_0_30px_rgba(0,208,198,0.15),0_0_15px_rgba(0,208,198,0.1),0_0_45px_rgba(82,46,255,0.15)]">
-              <div className="absolute inset-0 rounded-[15px] bg-gradient-to-r from-[#00D0C6] to-[#522EFF] opacity-0 group-hover:opacity-100 animate-[gradient_6s_ease_infinite] group-hover:bg-[length:200%_200%]" />
+              <div className="absolute inset-0 rounded-[15px] bg-gradient-to-r from-[#00D0C6] to-[#522EFF] opacity-0 group-hover:opacity-100 animate-[gradient_6s_ease_infinite] group-hover:bg-[length:200%_200%]
+                [&:has(input:focus)]:opacity-0" />
+              <div className="absolute inset-0 rounded-[15px] bg-gradient-to-r from-[#8E9196] via-[#555555] to-[#333333] opacity-0 [&:has(input:focus)]:opacity-100 animate-[gradient_6s_ease_infinite] bg-[length:200%_200%]" />
               <div className="relative bg-[#1E1D1D]/80 rounded-[15px]">
                 <div className="flex flex-row justify-between items-center p-[15px] w-full h-[97.49px] bg-gradient-to-r from-[rgba(78,78,78,0.3)] via-[rgba(32,40,50,0.25)] to-[rgba(78,78,78,0.3)] rounded-[15px]">
                   <div className="flex flex-row justify-between items-center w-full h-full">
-                    <div className="flex-1 mr-4 relative">
+                    <div className="flex-1 mr-4">
                       <input 
                         type="text"
                         value={amount}
                         onChange={handleInputChange}
-                        className="bg-transparent font-montserrat font-bold text-[33px] leading-[120%] tracking-[-0.02em] text-white w-full focus:outline-none relative z-10 transition-all duration-300
-                        focus:bg-clip-text focus:animate-gradient-x
-                        [&:focus+.input-border]:opacity-100 
-                        [&:focus+.input-border]:animate-[gradient_3s_ease-in-out_infinite]"
+                        className="bg-transparent font-montserrat font-bold text-[33px] leading-[120%] tracking-[-0.02em] text-white w-full focus:outline-none"
                         placeholder="0.0"
                       />
-                      <div className="input-border absolute inset-0 rounded-lg opacity-0 transition-opacity duration-300
-                        bg-gradient-to-r from-[#8E9196] via-[#555555] to-[#333333] p-[1px] -m-[1px]
-                        bg-[length:200%_200%]" />
                     </div>
                     <div className="flex flex-col gap-[11px] h-full justify-center">
                       <InputLabelButton 
