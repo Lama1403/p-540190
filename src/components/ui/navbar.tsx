@@ -4,7 +4,7 @@ import React from 'react';
 
 export const Navbar = () => {
   return (
-    <nav className="box-border flex flex-row justify-between items-center px-10 h-[72.4px] w-full border-b border-[#333333]">
+    <nav className="box-border flex flex-row justify-between items-center px-4 md:px-10 h-[72.4px] w-full border-b border-[#333333]">
       {/* Left side - Logo */}
       <div className="flex items-center gap-2">
         <svg width="110" height="38" viewBox="0 0 130 45" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,3 +46,4 @@ export const Navbar = () => {
     </nav>
   );
 };
+
