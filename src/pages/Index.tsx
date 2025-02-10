@@ -9,6 +9,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 
 const Index = () => {
   const [isSwapCompleted, setIsSwapCompleted] = useState(false);
+  const [isBridgeCompleted, setIsBridgeCompleted] = useState(false);
 
   return (
     <Background>
@@ -33,8 +34,11 @@ const Index = () => {
             <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 relative ${isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''}`}>
               <SwapCard onSwapComplete={() => setIsSwapCompleted(true)} isCompleted={isSwapCompleted} />
             </div>
-            <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 relative ${!isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''}`}>
-              <BridgeCard isDisabled={!isSwapCompleted} />
+            <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 relative ${!isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''} ${isBridgeCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''}`}>
+              <BridgeCard 
+                isDisabled={!isSwapCompleted} 
+                onBridgeComplete={() => setIsBridgeCompleted(true)}
+              />
             </div>
           </TooltipProvider>
         </div>

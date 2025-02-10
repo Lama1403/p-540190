@@ -9,7 +9,13 @@ import { TokenInfo } from "./components/TokenInfo";
 import { AmountInput } from "./components/AmountInput";
 import { Check } from "lucide-react";
 
-export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = true }) => {
+export const BridgeCard: React.FC<{ 
+  isDisabled?: boolean;
+  onBridgeComplete?: () => void;
+}> = ({ 
+  isDisabled = true,
+  onBridgeComplete 
+}) => {
   const [amount, setAmount] = useState<string>('');
   const [buttonText, setButtonText] = useState<string>('Bridge');
   const [isSuccess, setIsSuccess] = useState(false);
@@ -87,6 +93,7 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
       setTimeout(() => {
         setButtonText('Success');
         setIsSuccess(true);
+        onBridgeComplete?.(); // Call the completion callback
         toast({
           title: "✅ Bridge Complete",
           description: "Your tokens have been successfully bridged",
