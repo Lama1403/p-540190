@@ -9,7 +9,7 @@ const Index = () => {
       <main 
         style={{
           width: "100%",
-          height: "100vh",
+          minHeight: "100vh", // Changed from height to minHeight
           padding: "1rem",
           display: "flex",
           alignItems: "center",
