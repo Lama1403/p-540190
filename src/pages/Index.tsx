@@ -4,13 +4,16 @@ import { BridgeCard } from "@/components/bridge/BridgeCard";
 import { Background } from "@/components/ui/background";
 import { CustomNavbar } from "@/components/layout/CustomNavbar";
 import { PageHeader } from "@/components/ui/page-header";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Sparkles, Star } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Index = () => {
   const [isSwapCompleted, setIsSwapCompleted] = useState(false);
   const [isBridgeCompleted, setIsBridgeCompleted] = useState(false);
+  const bridgeRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     if (isBridgeCompleted) {
@@ -22,6 +25,17 @@ const Index = () => {
       return () => clearTimeout(timer);
     }
   }, [isBridgeCompleted]);
+
+  useEffect(() => {
+    if (isSwapCompleted && isMobile && bridgeRef.current) {
+      setTimeout(() => {
+        bridgeRef.current?.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }, 1000); // Wait for animations to complete
+    }
+  }, [isSwapCompleted, isMobile]);
 
   return (
     <Background>
@@ -47,7 +61,10 @@ const Index = () => {
             <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 relative ${isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''}`}>
               <SwapCard onSwapComplete={() => setIsSwapCompleted(true)} isCompleted={isSwapCompleted} />
             </div>
-            <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 relative ${!isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''} ${isBridgeCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''}`}>
+            <div 
+              ref={bridgeRef}
+              className={`w-full max-w-md h-full flex items-center transition-all duration-500 relative ${!isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''} ${isBridgeCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''}`}
+            >
               <BridgeCard 
                 isDisabled={!isSwapCompleted} 
                 onBridgeComplete={() => setIsBridgeCompleted(true)}
