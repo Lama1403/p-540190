@@ -96,13 +96,13 @@ export const BridgeCard: React.FC = () => {
             <div className="flex flex-col gap-[11px] h-full justify-center">
               <button 
                 onClick={handleMaxClick}
-                className="w-[60.38px] h-[28.24px] bg-[#2B2970] rounded-[78.5256px] font-['Montserrat'] font-bold text-[10.3036px] leading-[120%] text-[#87A1FF] capitalize"
+                className="w-[60.38px] h-[28.24px] bg-[#2B2970] rounded-[78.5256px] font-['Montserrat'] font-bold text-[10.3036px] leading-[120%] text-[#87A1FF] capitalize transition-colors active:bg-[#201f5c] hover:bg-[#252156]"
               >
                 Max
               </button>
               <button 
                 onClick={handleHalfClick}
-                className="w-[60.38px] h-[28.24px] bg-[#173C3F] rounded-[78.5256px] font-['Montserrat'] font-bold text-[10.3036px] leading-[120%] text-[#00D0C6] capitalize"
+                className="w-[60.38px] h-[28.24px] bg-[#173C3F] rounded-[78.5256px] font-['Montserrat'] font-bold text-[10.3036px] leading-[120%] text-[#00D0C6] capitalize transition-colors active:bg-[#122e30] hover:bg-[#153436]"
               >
                 Half
               </button>
@@ -112,7 +112,7 @@ export const BridgeCard: React.FC = () => {
 
         {/* Bridge Button */}
         <Button 
-          className="w-[207px] h-[33px] bg-[#173C3F] border border-[#00D0C6] rounded-[127.434px] text-white font-bold text-[15.5071px] leading-[120%] tracking-[-0.03em] capitalize"
+          className="w-[207px] h-[33px] bg-[#173C3F] border border-[#00D0C6] rounded-[127.434px] text-white font-bold text-[15.5071px] leading-[120%] tracking-[-0.03em] capitalize transition-colors active:bg-[#122e30] hover:bg-[#153436]"
         >
           Bridge
         </Button>
