@@ -6,7 +6,7 @@ import { CustomNavbar } from "@/components/layout/CustomNavbar";
 import { PageHeader } from "@/components/ui/page-header";
 import { useState } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Check } from "lucide-react";
+import { Trophy } from "lucide-react";
 
 const Index = () => {
   const [isSwapCompleted, setIsSwapCompleted] = useState(false);
@@ -30,10 +30,10 @@ const Index = () => {
           <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center animate-fade-in">
             <div className="text-center space-y-4 animate-scale-in">
               <div className="w-20 h-20 rounded-full bg-custom-primary flex items-center justify-center mx-auto animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]">
-                <Check className="w-10 h-10 text-white" />
+                <Trophy className="w-10 h-10 text-white" />
               </div>
-              <h2 className="text-3xl font-bold text-white">Transaction Complete!</h2>
-              <p className="text-gray-300">Your tokens have been successfully bridged</p>
+              <h2 className="text-3xl font-bold text-white">Level Up Complete!</h2>
+              <p className="text-gray-300">Your tokens have been successfully upgraded to Zilliqa Network</p>
             </div>
           </div>
         )}
