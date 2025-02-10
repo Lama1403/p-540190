@@ -89,12 +89,6 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
           className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-fade-in",
           duration: 3000,
         });
-        
-        // Reset button text and success state after showing success
-        setTimeout(() => {
-          setButtonText('Bridge');
-          setIsSuccess(false);
-        }, 2000);
       }, 2500);
     }, 2000);
   };
@@ -136,4 +130,3 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
     </StyledCard>
   );
 };
-
