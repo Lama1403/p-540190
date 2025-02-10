@@ -17,8 +17,10 @@ interface SwapCardProps {
 
 export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted }) => {
   const { toast } = useToast();
+  const [buttonText, setButtonText] = React.useState<string>("Swap");
 
   const handleSwap = () => {
+    setButtonText("Initiating Swap...");
     // Success toast
     toast({
       title: "✨ Swap Initiated",
@@ -30,6 +32,7 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
 
     // Show progress toast after delay
     setTimeout(() => {
+      setButtonText("Processing...");
       toast({
         title: "🔄 Processing",
         description: "Transaction in progress...",
@@ -40,6 +43,7 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
 
       // Simulate swap completion after processing
       setTimeout(() => {
+        setButtonText("Success");
         toast({
           title: "✅ Swap Complete",
           description: "You can now proceed to bridge your tokens",
@@ -48,6 +52,8 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
           duration: 3000,
         });
         onSwapComplete?.();
+        // Reset button text after showing success
+        setTimeout(() => setButtonText("Swap"), 2000);
       }, 2000);
     }, 1500);
   };
@@ -148,7 +154,7 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
             <span className="animate-fade-in">Success</span>
           </div>
         ) : (
-          "Swap"
+          buttonText
         )}
       </StyledButton>
     </StyledCard>
