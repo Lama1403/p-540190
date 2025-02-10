@@ -1,4 +1,3 @@
-
 import { SwapCard } from "@/components/swap/SwapCard";
 import { BridgeCard } from "@/components/bridge/BridgeCard";
 import { Background } from "@/components/ui/background";
@@ -17,10 +16,8 @@ const Index = () => {
 
   useEffect(() => {
     if (isBridgeCompleted) {
-      // Wait 5 seconds then refresh the page
       const timer = setTimeout(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        // Wait for scroll animation to complete before refreshing
         setTimeout(() => {
           window.location.reload();
         }, 500);
@@ -37,7 +34,7 @@ const Index = () => {
           behavior: 'smooth',
           block: 'start'
         });
-      }, 1000); // Wait for animations to complete
+      }, 1000);
     }
   }, [isSwapCompleted, isMobile]);
 
@@ -47,7 +44,7 @@ const Index = () => {
       <main 
         style={{
           width: "100%",
-          minHeight: "calc(100vh - 72.4px)", // Subtract navbar height
+          minHeight: "calc(100vh - 72.4px)",
           padding: "1rem",
           display: "flex",
           flexDirection: "column",
@@ -85,17 +82,17 @@ const Index = () => {
                   <Star className="w-12 h-12 text-white animate-[spin_4s_linear_infinite]" />
                 </div>
                 <div className="absolute -top-4 -right-4">
-                  <Sparkles className="w-8 h-8 text-[#F97316] animate-[bounce_2s_infinite]" />
+                  <Sparkles className="w-8 h-8 text-[#00D0C6] animate-[bounce_2s_infinite]" />
                 </div>
                 <div className="absolute -bottom-4 -left-4">
-                  <Sparkles className="w-8 h-8 text-[#0EA5E9] animate-[bounce_2s_infinite_0.5s]" />
+                  <Sparkles className="w-8 h-8 text-[#522EFF] animate-[bounce_2s_infinite_0.5s]" />
                 </div>
               </div>
               <div className="space-y-4">
-                <h2 className="text-4xl font-bold bg-gradient-to-r from-[#F97316] via-[#8B5CF6] to-[#0EA5E9] text-transparent bg-clip-text animate-[pulse_2s_ease-in-out_infinite]">
+                <h2 className="text-4xl font-bold bg-gradient-to-r from-[#00D0C6] to-[#522EFF] text-transparent bg-clip-text animate-[pulse_2s_ease-in-out_infinite]">
                   Upgrade Complete!
                 </h2>
-                <p className="text-[#E5DEFF] text-lg">
+                <p className="text-white/90 text-lg">
                   Your tokens have ascended to the Zilliqa Network ✨
                 </p>
               </div>
