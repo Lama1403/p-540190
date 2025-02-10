@@ -2,26 +2,28 @@
 import { SwapCard } from "@/components/swap/SwapCard";
 import { BridgeCard } from "@/components/bridge/BridgeCard";
 import { Background } from "@/components/ui/background";
+import { Navbar } from "@/components/ui/navbar";
 
 const Index = () => {
   return (
     <Background>
+      <Navbar />
       <main 
         style={{
           width: "100%",
-          minHeight: "100vh",
+          minHeight: "calc(100vh - 72.4px)", // Subtract navbar height
           padding: "1rem",
           display: "flex",
-          alignItems: "center", // Changed back to center for vertical alignment
+          alignItems: "center",
           justifyContent: "center",
           gap: "2rem",
           flexWrap: "wrap"
         }}
       >
-        <div className="w-full max-w-md h-full flex items-center"> {/* Added flex and items-center */}
+        <div className="w-full max-w-md h-full flex items-center">
           <SwapCard />
         </div>
-        <div className="w-full max-w-md h-full flex items-center"> {/* Added flex and items-center */}
+        <div className="w-full max-w-md h-full flex items-center">
           <BridgeCard />
         </div>
       </main>
