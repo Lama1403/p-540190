@@ -35,7 +35,7 @@ export const SwapCard: React.FC = () => {
         </div>
         
         <Button 
-          className="w-[207px] h-[33px] bg-[#173C3F] border border-[#00D0C6] rounded-[127.434px] text-white font-bold text-[15.5071px] leading-[120%] tracking-[-0.03em] capitalize"
+          className="w-[207px] h-[33px] bg-[#173C3F] border border-[#00D0C6] rounded-[127.434px] text-white font-bold text-[15.5071px] leading-[120%] tracking-[-0.03em] capitalize transition-colors hover:bg-[#00D0C6] active:bg-[#00b8af]"
         >
           Swap
         </Button>
