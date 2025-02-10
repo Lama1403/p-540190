@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ChevronRight } from "lucide-react";
 import { StyledCard } from "@/components/ui/styled-card";
@@ -160,7 +161,7 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
               <div className="absolute inset-0 rounded-[15px] bg-gradient-to-r from-[#00D0C6] to-[#522EFF] opacity-0 group-hover:opacity-100 animate-[gradient_6s_ease_infinite] group-hover:bg-[length:200%_200%]
                 [&:has(input:focus)]:opacity-0" />
               <div className="absolute inset-0 rounded-[15px] bg-gradient-to-r from-[#8E9196] via-[#555555] to-[#333333] opacity-0 [&:has(input:focus)]:opacity-100 animate-[gradient_6s_ease_infinite] bg-[length:200%_200%]" />
-              <div className="relative bg-[#1E1D1D]/80 rounded-[15px]">
+              <div className="relative bg-[#1E1D1D]/80 rounded-[15px] group-hover:bg-gradient-to-r group-hover:from-[#333333]/50 group-hover:to-[#555555]/50">
                 <div className="flex flex-row justify-between items-center p-[15px] w-full h-[97.49px] bg-gradient-to-r from-[rgba(78,78,78,0.3)] via-[rgba(32,40,50,0.25)] to-[rgba(78,78,78,0.3)] rounded-[15px]">
                   <div className="flex flex-row justify-between items-center w-full h-full">
                     <div className="flex-1 mr-4">
