@@ -1,27 +1,23 @@
 
 import { getDefaultWallets } from '@rainbow-me/rainbowkit';
-import { configureChains, createConfig } from 'wagmi';
+import { http } from 'viem';
+import { createConfig } from 'wagmi';
 import { mainnet, sepolia } from 'wagmi/chains';
-import { publicProvider } from 'wagmi/providers/public';
 
 const walletProjectId = '965d2688f2fc05f0385e035cf0768d6e';
 
-const { chains, publicClient, webSocketPublicClient } = configureChains(
-  [mainnet, sepolia],
-  [publicProvider()]
-);
-
-const { connectors } = getDefaultWallets({
+const { wallets } = getDefaultWallets({
   appName: 'ZIL Bridge',
   projectId: walletProjectId,
-  chains,
 });
 
-export const wagmiConfig = createConfig({
-  autoConnect: true,
-  connectors,
-  publicClient,
-  webSocketPublicClient,
+export const config = createConfig({
+  chains: [mainnet, sepolia],
+  transports: {
+    [mainnet.id]: http(),
+    [sepolia.id]: http(),
+  },
+  connectors: wallets,
 });
 
-export { chains };
+export const chains = [mainnet, sepolia];
