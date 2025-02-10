@@ -6,7 +6,7 @@ const Index = () => {
     <main 
       className="min-h-screen w-full flex items-center justify-center p-4 bg-cover bg-center bg-no-repeat bg-fixed"
       style={{
-        backgroundImage: "url('/lovable-uploads/0613de0c-9adc-49cd-ad34-4ba483cd389e.png')",
+        backgroundImage: "url('/lovable-uploads/d127b1b1-c1c5-472d-a36f-98dedde7aba1.png')",
         minHeight: "100vh"
       }}
     >
