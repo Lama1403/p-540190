@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ChevronRight } from "lucide-react";
 import { StyledCard } from "@/components/ui/styled-card";
@@ -74,32 +75,34 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
   };
 
   return (
-    <StyledCard className={`transition-opacity duration-300 ${isDisabled ? 'opacity-50 pointer-events-none' : 'opacity-100'}`}>
+    <StyledCard className={`transition-opacity duration-300 ${isDisabled ? 'opacity-50' : 'opacity-100'}`}>
       <div className="relative w-full">
         <BridgeHeader 
           title="2- Bridge"
           description="Bridge your Interim ERC-20 ZIL to Zilliqa Network"
         />
         {isDisabled && (
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <button 
-                className="absolute right-0 top-1/2 -translate-y-1/2 p-2 rounded-full hover:bg-white/5 transition-colors cursor-help"
-                type="button"
-                aria-label="Bridge status info"
+          <div className="absolute right-0 top-1/2 -translate-y-1/2">
+            <Tooltip defaultOpen>
+              <TooltipTrigger asChild>
+                <button 
+                  className="p-2 rounded-full hover:bg-white/5 transition-colors cursor-help"
+                  type="button"
+                  aria-label="Bridge status info"
+                >
+                  <Info className="w-5 h-5 text-[#8E9196]" />
+                </button>
+              </TooltipTrigger>
+              <TooltipContent 
+                side="right" 
+                align="center" 
+                className="bg-[#1A1F2C] text-white border-[#8E9196] shadow-lg"
+                sideOffset={5}
               >
-                <Info className="w-5 h-5 text-[#8E9196]" />
-              </button>
-            </TooltipTrigger>
-            <TooltipContent 
-              side="right" 
-              align="center" 
-              className="bg-[#1A1F2C] text-white border-[#8E9196] shadow-lg"
-              sideOffset={5}
-            >
-              <p className="text-sm">You need to complete the token swap before you can bridge your tokens to the Zilliqa network. Complete step 1 first.</p>
-            </TooltipContent>
-          </Tooltip>
+                <p className="text-sm">You need to complete the token swap before you can bridge your tokens to the Zilliqa network. Complete step 1 first.</p>
+              </TooltipContent>
+            </Tooltip>
+          </div>
         )}
       </div>
       
