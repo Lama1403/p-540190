@@ -29,7 +29,7 @@ const config = createConfig({
   transports: {
     [mainnet.id]: http(),
   },
-  wallets,
+  connectors: wallets,
 });
 
 const App = () => (
