@@ -46,6 +46,8 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
   };
 
   const handleBridge = () => {
+    if (isSuccess) return; // Prevent clicking if already in success state
+    
     if (!amount) {
       setButtonText('Enter Amount');
       toast({
@@ -116,7 +118,7 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
       <StyledButton 
         variant="primary" 
         onClick={handleBridge}
-        disabled={isDisabled}
+        disabled={isDisabled || isSuccess}
       >
         {isSuccess ? (
           <div className="flex items-center gap-2">
