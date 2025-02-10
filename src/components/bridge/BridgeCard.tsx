@@ -83,7 +83,7 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
         />
         {isDisabled && (
           <div className="absolute right-0 top-1/2 -translate-y-1/2">
-            <Tooltip defaultOpen>
+            <Tooltip>
               <TooltipTrigger asChild>
                 <button 
                   className="p-2 rounded-full hover:bg-white/5 transition-colors cursor-help"
