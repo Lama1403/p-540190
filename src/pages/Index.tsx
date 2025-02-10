@@ -4,9 +4,10 @@ import { SwapCard } from "@/components/swap/SwapCard";
 const Index = () => {
   return (
     <main 
-      className="min-h-screen flex items-center justify-center p-4 bg-cover bg-center bg-no-repeat"
+      className="min-h-screen w-full flex items-center justify-center p-4 bg-cover bg-center bg-no-repeat bg-fixed"
       style={{
-        backgroundImage: "url('/lovable-uploads/0613de0c-9adc-49cd-ad34-4ba483cd389e.png')"
+        backgroundImage: "url('/lovable-uploads/0613de0c-9adc-49cd-ad34-4ba483cd389e.png')",
+        minHeight: "100vh"
       }}
     >
       <div className="w-full max-w-md">
