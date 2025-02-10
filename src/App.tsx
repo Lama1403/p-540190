@@ -24,7 +24,7 @@ const { connectors } = getDefaultWallets({
   projectId,
 });
 
-const config = createConfig({
+const wagmiConfig = createConfig({
   chains: [mainnet],
   transports: {
     [mainnet.id]: http(),
@@ -34,9 +34,8 @@ const config = createConfig({
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <WagmiConfig config={config}>
+    <WagmiConfig config={wagmiConfig}>
       <RainbowKitProvider 
-        chains={[mainnet]}
         theme={darkTheme({
           accentColor: '#00D0C6',
           borderRadius: 'medium',
