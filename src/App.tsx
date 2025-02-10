@@ -20,9 +20,12 @@ const App = () => (
         theme={darkTheme({
           accentColor: '#00D0C6',
           accentColorForeground: 'white',
-          borderRadius: 'medium',
+          borderRadius: 'large',
+          fontStack: 'system',
+          overlayBlur: 'small',
         })}
         chains={chains}
+        modalSize="compact"
       >
         <TooltipProvider>
           <Toaster />
@@ -40,4 +43,3 @@ const App = () => (
 );
 
 export default App;
-
