@@ -4,15 +4,9 @@ import { SwapCard } from "@/components/swap/SwapCard";
 const Index = () => {
   return (
     <main 
-      className="min-h-screen w-full flex items-center justify-center p-4"
+      className="min-h-screen w-full flex items-center justify-center p-4 bg-black bg-center bg-no-repeat bg-cover bg-fixed"
       style={{
-        backgroundImage: `url('/d127b1b1-c1c5-472d-a36f-98dedde7aba1.png')`,
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        backgroundAttachment: 'fixed',
-        minHeight: "100vh",
-        backgroundColor: '#000' // Fallback color while image loads
+        backgroundImage: `url('https://images.unsplash.com/photo-1534884473008-38e5e89e0369?q=80&w=1974&auto=format&fit=crop')`
       }}
     >
       <div className="w-full max-w-md">
