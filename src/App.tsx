@@ -26,14 +26,17 @@ const connectors = connectorsForWallets([
   {
     groupName: 'Recommended',
     wallets: [
-      injectedWallet,
-      rainbowWallet,
-      walletConnectWallet,
-      coinbaseWallet,
-      metaMaskWallet,
+      injectedWallet({ projectId, chains: [mainnet] }),
+      rainbowWallet({ projectId, chains: [mainnet] }),
+      walletConnectWallet({ projectId, chains: [mainnet] }),
+      coinbaseWallet({ appName: 'My RainbowKit App', chains: [mainnet] }),
+      metaMaskWallet({ projectId, chains: [mainnet] }),
     ],
   },
-], { projectId });
+], {
+  appName: 'My RainbowKit App',
+  projectId
+});
 
 // Create wagmi config
 const config = createConfig({
@@ -41,7 +44,7 @@ const config = createConfig({
   transports: {
     [mainnet.id]: http(),
   },
-  connectors: connectors,
+  connectors,
 });
 
 const App = () => (
@@ -52,7 +55,7 @@ const App = () => (
           accentColor: '#00D0C6',
           borderRadius: 'medium',
         })}
-        chains={[mainnet]}
+        coolMode
       >
         <TooltipProvider>
           <Toaster />
