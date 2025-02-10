@@ -127,7 +127,7 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
         disabled={isCompleted}
         className={`transition-all duration-300 ${
           isCompleted 
-            ? "bg-gradient-to-r from-[#8B5CF6] to-[#D946EF] border-[#D946EF] cursor-not-allowed shadow-lg hover:shadow-xl hover:scale-[1.02] animate-fade-in" 
+            ? "bg-gradient-to-r from-[#00D0C6] to-[#522EFF] border-[#522EFF] cursor-not-allowed shadow-lg hover:shadow-xl hover:scale-[1.02] animate-fade-in" 
             : ""
         }`}
       >
