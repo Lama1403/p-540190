@@ -12,16 +12,16 @@ const Index = () => {
           minHeight: "100vh",
           padding: "1rem",
           display: "flex",
-          alignItems: "stretch", // Changed from center to stretch
+          alignItems: "center", // Changed back to center for vertical alignment
           justifyContent: "center",
           gap: "2rem",
           flexWrap: "wrap"
         }}
       >
-        <div className="w-full max-w-md h-full"> {/* Added h-full */}
+        <div className="w-full max-w-md h-full flex items-center"> {/* Added flex and items-center */}
           <SwapCard />
         </div>
-        <div className="w-full max-w-md h-full"> {/* Added h-full */}
+        <div className="w-full max-w-md h-full flex items-center"> {/* Added flex and items-center */}
           <BridgeCard />
         </div>
       </main>
