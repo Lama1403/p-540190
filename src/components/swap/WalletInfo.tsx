@@ -2,43 +2,32 @@
 import React from 'react';
 
 interface WalletInfoProps {
-  address?: string;
-  balance?: string;
+  address: string;
+  balance: string;
 }
 
-export const WalletInfo: React.FC<WalletInfoProps> = ({ 
-  address = "0x1234...5678",
-  balance = "1.234 ETH"
-}) => {
+export const WalletInfo: React.FC<WalletInfoProps> = ({ address, balance }) => {
   return (
-    <div className="flex flex-row items-center gap-2.5 w-[240.57px] h-[34.73px]">
-      {/* Logo Container */}
-      <div className="flex flex-row justify-center items-center p-[7px] w-[38px] h-[34.73px] bg-[#1E1D1D] rounded-lg">
-        <div className="w-[15.33px] h-[20.73px]">
-          <svg width="16" height="22" viewBox="0 0 16 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15.25 21.49L0 0V21.49H15.25Z" fill="#05707E"/>
-          </svg>
-        </div>
-      </div>
-
-      {/* Wallet Container */}
-      <div className="flex flex-row items-center px-[9px] py-1 gap-[7px] w-[192.57px] h-[34.73px] bg-[#1E1D1D] rounded-lg">
-        {/* Balance */}
-        <span className="font-['Montserrat'] font-semibold text-[15px] leading-[46px] flex items-center text-white capitalize">
-          {balance}
-        </span>
-
-        {/* Address Container */}
-        <div className="flex flex-row items-center px-[5px] py-[3px] gap-[5px] w-[101.97px] h-[24.95px] bg-[#333333] rounded-[5px]">
-          {/* Address */}
-          <span className="font-['Montserrat'] font-semibold text-[11px] leading-[120%] flex items-center text-center underline capitalize text-white">
+    <div className="flex flex-row justify-between items-center p-[17px] gap-[8px] w-full h-[64px] min-h-[48px] bg-[#1E1D1D]/80 backdrop-blur-lg shadow-2xl rounded-[15px]">
+      <div className="flex flex-row items-center gap-[15px] w-full">
+        <div className="flex flex-row items-center gap-[5px]">
+          <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-[#C2C2C2]">
+            Wallet
+          </span>
+          <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-white">
             {address}
           </span>
-          
-          {/* Circle */}
-          <div className="w-[18.97px] h-[18.95px] rounded-full bg-[#97CFE5]" />
+        </div>
+        <div className="flex flex-row justify-center items-center gap-[5px] ml-auto">
+          <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-[#C2C2C2]">
+            Balance
+          </span>
+          <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-white">
+            {balance}
+          </span>
         </div>
       </div>
     </div>
   );
 };
+
