@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ChevronRight } from "lucide-react";
 import { StyledCard } from "@/components/ui/styled-card";
@@ -86,24 +87,22 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
       <Tooltip>
         <TooltipTrigger asChild>
           <div className="w-full transition-all duration-300 rounded-[15px]">
-            <div className="relative bg-[#1E1D1D]/80 rounded-[15px]">
-              <div className="flex flex-row items-start justify-between w-full h-[16px] px-[10px]">
-                <div className="flex flex-row items-center gap-[5px]">
-                  <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-[#C2C2C2]">
-                    From
-                  </span>
-                  <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-white">
-                    0xD81...C5af2
-                  </span>
-                </div>
-                <div className="flex flex-row items-center gap-[5px]">
-                  <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-[#C2C2C2]">
-                    To
-                  </span>
-                  <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-white">
-                    zil1...4a9p
-                  </span>
-                </div>
+            <div className="flex flex-row items-start justify-between w-full h-[16px] px-[10px]">
+              <div className="flex flex-row items-center gap-[5px]">
+                <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-[#C2C2C2]">
+                  From
+                </span>
+                <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-white">
+                  0xD81...C5af2
+                </span>
+              </div>
+              <div className="flex flex-row items-center gap-[5px]">
+                <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-[#C2C2C2]">
+                  To
+                </span>
+                <span className="font-['Montserrat'] font-normal text-[12px] leading-[16px] text-white">
+                  zil1...4a9p
+                </span>
               </div>
             </div>
           </div>
@@ -208,3 +207,4 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
     </StyledCard>
   );
 };
+
