@@ -1,3 +1,4 @@
+
 import { SwapCard } from "@/components/swap/SwapCard";
 import { BridgeCard } from "@/components/bridge/BridgeCard";
 import { Background } from "@/components/ui/background";
@@ -77,7 +78,7 @@ const Index = () => {
         </div>
         {isBridgeCompleted && (
           <div className="fixed inset-0 z-50 flex items-center justify-center">
-            <div className="absolute inset-0 bg-[#333333]/90" />
+            <div className="absolute inset-0 bg-[#333333]/90 backdrop-blur-[10px]" />
             <div className="relative p-8 text-center space-y-8 animate-scale-in">
               <div className="relative">
                 <div className="w-24 h-24 rounded-full bg-gradient-to-r from-[#00D0C6] to-[#522EFF] flex items-center justify-center mx-auto animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]">
