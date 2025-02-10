@@ -140,10 +140,10 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
         variant="primary" 
         onClick={handleSwap}
         disabled={isCompleted}
-        className={`relative transition-all duration-300 ${
+        className={`transition-all duration-300 ${
           isCompleted 
             ? "bg-gradient-to-r from-[#00D0C6] to-[#522EFF] border-[#522EFF] cursor-not-allowed shadow-lg hover:shadow-xl hover:scale-[1.02] animate-fade-in" 
-            : "relative bg-[#1E1D1D] border-[1.5px] border-transparent hover:border-[1.5px] hover:border-[transparent] rounded-[127px] before:absolute before:inset-[-1.5px] before:rounded-[127px] before:p-[1.5px] before:bg-gradient-to-r before:from-[#00D0C6] before:via-[#243949] before:to-[#522EFF] before:opacity-0 hover:before:opacity-100 before:transition-all before:duration-300"
+            : ""
         }`}
       >
         {isCompleted ? (
@@ -152,9 +152,10 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
             <span className="animate-fade-in">Success</span>
           </div>
         ) : (
-          <span className="relative z-10">Swap</span>
+          "Swap"
         )}
       </StyledButton>
     </StyledCard>
   );
 };
+
