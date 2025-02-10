@@ -18,7 +18,7 @@ export const StyledButton: React.FC<StyledButtonProps> = ({
 }) => {
   const baseStyles = {
     primary: cn(
-      "relative transition-all duration-300 px-8",
+      "relative transition-all duration-300 px-8 py-5",
       "bg-[#173C3F] border border-[#00D0C6] rounded-[127.434px]",
       "hover:border-transparent hover:shadow-[0_0_30px_rgba(0,208,198,0.15),0_0_15px_rgba(0,208,198,0.1),0_0_45px_rgba(14,165,233,0.15)]",
       "before:absolute before:inset-[1px] before:rounded-[127.434px] before:bg-[#173C3F] before:z-[1]",
