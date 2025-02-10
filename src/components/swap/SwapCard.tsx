@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { StyledCard } from "@/components/ui/styled-card";
-import { SwapHeader } from "./SwapHeader";
+import { CardHeader } from "@/components/shared/CardHeader";
 import { WalletInfo } from "./WalletInfo";
 import { TokenSelector } from "./TokenSelector";
 import { NetworkSelector } from "./NetworkSelector";
@@ -55,7 +55,7 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
   return (
     <StyledCard>
       <div className="relative w-full">
-        <SwapHeader 
+        <CardHeader 
           title="1- Swap"
           description="Swap your interim ERC-20 ZIL for Bridged ERC-20 ZIL"
         />

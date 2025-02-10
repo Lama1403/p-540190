@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { StyledCard } from "@/components/ui/styled-card";
 import { StyledButton } from "@/components/ui/styled-button";
-import { BridgeHeader } from "./BridgeHeader";
+import { CardHeader } from "@/components/shared/CardHeader";
 import { useToast } from "@/hooks/use-toast";
 import { AddressInfo } from "./components/AddressInfo";
 import { TokenInfo } from "./components/TokenInfo";
@@ -26,7 +26,7 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
       title: "💎 Maximum Amount Set",
       description: `Set to maximum available: ${maxAmount} ZIL`,
       variant: "default",
-      className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-xl shadow-2xl animate-scale-in",
+      className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-scale-in",
       duration: 2000,
     });
   };
@@ -37,7 +37,7 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
       title: "🎯 Half Amount Set",
       description: `Set to half of maximum: ${maxAmount / 2} ZIL`,
       variant: "default",
-      className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-xl shadow-2xl animate-scale-in",
+      className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-scale-in",
       duration: 2000,
     });
   };
@@ -48,7 +48,7 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
         title: "⚠️ Error",
         description: "Please enter an amount to bridge",
         variant: "destructive",
-        className: "bg-black/10 backdrop-blur-lg border-red-500/20 text-red-500 rounded-xl shadow-2xl animate-fade-in",
+        className: "bg-black/10 backdrop-blur-lg border-red-500/20 text-red-500 rounded-[15px] shadow-2xl animate-fade-in",
         duration: 3000,
       });
       return;
@@ -58,7 +58,7 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
       title: "🌉 Bridge Initiated",
       description: `Bridging ${amount} ZIL to Zilliqa Network...`,
       variant: "default",
-      className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-xl shadow-2xl animate-fade-in",
+      className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-fade-in",
       duration: 3000,
     });
 
@@ -67,7 +67,7 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
         title: "⏳ Processing Bridge",
         description: "Please wait while we process your transaction...",
         variant: "default",
-        className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-xl shadow-2xl animate-fade-in",
+        className: "bg-black/10 backdrop-blur-lg border border-white/20 text-white rounded-[15px] shadow-2xl animate-fade-in",
         duration: 2500,
       });
     }, 2000);
@@ -76,7 +76,7 @@ export const BridgeCard: React.FC<{ isDisabled?: boolean }> = ({ isDisabled = tr
   return (
     <StyledCard className={`transition-opacity duration-300 ${isDisabled ? 'opacity-50' : 'opacity-100'}`}>
       <div className="relative w-full">
-        <BridgeHeader 
+        <CardHeader 
           title="2- Bridge"
           description="Bridge your Interim ERC-20 ZIL to Zilliqa Network"
         />
