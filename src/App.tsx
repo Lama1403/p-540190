@@ -33,14 +33,14 @@ const config = createConfig({
 });
 
 const App = () => (
-  <WagmiConfig config={config}>
-    <RainbowKitProvider 
-      theme={darkTheme({
-        accentColor: '#00D0C6',
-        borderRadius: 'medium',
-      })}
-    >
-      <QueryClientProvider client={queryClient}>
+  <QueryClientProvider client={queryClient}>
+    <WagmiConfig config={config}>
+      <RainbowKitProvider 
+        theme={darkTheme({
+          accentColor: '#00D0C6',
+          borderRadius: 'medium',
+        })}
+      >
         <TooltipProvider>
           <Toaster />
           <Sonner />
@@ -51,9 +51,9 @@ const App = () => (
             </Routes>
           </BrowserRouter>
         </TooltipProvider>
-      </QueryClientProvider>
-    </RainbowKitProvider>
-  </WagmiConfig>
+      </RainbowKitProvider>
+    </WagmiConfig>
+  </QueryClientProvider>
 );
 
 export default App;
