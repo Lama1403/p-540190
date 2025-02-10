@@ -28,4 +28,3 @@ export const TokenSelector: React.FC<TokenSelectorProps> = ({ fromToken, toToken
     </div>
   );
 };
-

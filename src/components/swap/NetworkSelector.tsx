@@ -20,4 +20,3 @@ export const NetworkSelector: React.FC<NetworkSelectorProps> = ({ network }) => 
     </div>
   );
 };
-

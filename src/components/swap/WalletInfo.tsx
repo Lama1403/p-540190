@@ -1,6 +1,5 @@
 
 import React from 'react';
-// import { useAccount, useBalance } from 'wagmi';
 
 interface WalletInfoProps {
   address?: string;
@@ -8,12 +7,6 @@ interface WalletInfoProps {
 }
 
 export const WalletInfo: React.FC<WalletInfoProps> = () => {
-  // Temporarily disabled wallet integration
-  // const { address } = useAccount();
-  // const { data: balanceData } = useBalance({
-  //   address: address,
-  // });
-
   const displayAddress = '0x00...0000';
   const displayBalance = '0.00';
 
