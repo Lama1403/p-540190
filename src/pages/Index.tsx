@@ -11,7 +11,11 @@ const Index = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "#1e40af", // A solid blue background
+        backgroundColor: "#1e40af", // Fallback color
+        backgroundImage: "url('https://source.unsplash.com/featured/?cryptocurrency,blockchain')",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
       }}
     >
       <div className="w-full max-w-md">
