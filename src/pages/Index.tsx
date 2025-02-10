@@ -51,6 +51,10 @@ const Index = () => {
             </div>
           </div>
         )}
+        <PageHeader 
+          title="Swap & Bridge"
+          description="Swap your tokens and bridge them to another network seamlessly"
+        />
         <div className="flex items-center justify-center gap-8 flex-wrap w-full">
           <TooltipProvider delayDuration={0}>
             <div className={`w-full max-w-md h-full flex items-center transition-all duration-500 relative ${isSwapCompleted ? 'opacity-50 scale-95 pointer-events-none' : ''}`}>
