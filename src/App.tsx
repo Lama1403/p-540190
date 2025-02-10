@@ -7,7 +7,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { 
-  connectorsForWallets,
   RainbowKitProvider,
   darkTheme,
   getDefaultWallets
@@ -20,17 +19,11 @@ const queryClient = new QueryClient();
 
 const projectId = '965d2688f2fc05f0385e035cf0768d6e';
 
-const { wallets } = getDefaultWallets({
+const { connectors } = getDefaultWallets({
   appName: 'My RainbowKit App',
-  projectId
+  projectId,
+  chains: [mainnet],
 });
-
-const connectors = connectorsForWallets([
-  {
-    groupName: 'Recommended',
-    wallets
-  },
-]);
 
 // Create wagmi config
 const config = createConfig({
