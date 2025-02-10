@@ -19,7 +19,11 @@ const Index = () => {
     if (isBridgeCompleted) {
       // Wait 5 seconds then refresh the page
       const timer = setTimeout(() => {
-        window.location.reload();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Wait for scroll animation to complete before refreshing
+        setTimeout(() => {
+          window.location.reload();
+        }, 500);
       }, 5000);
 
       return () => clearTimeout(timer);
