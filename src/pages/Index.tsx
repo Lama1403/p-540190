@@ -55,10 +55,18 @@ const Index = () => {
                   <Sparkles className="w-8 h-8 text-[#F97316] animate-[bounce_2s_infinite]" />
                 </div>
                 <div className="absolute -bottom-4 -left-4">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-[#0EA5E9] animate-[bounce_2s_infinite_0.5s]">
-                    <path d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                    <path d="M16 20L16 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                    <path d="M12 16L16 12L20 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <svg width="26" height="36" viewBox="0 0 26 36" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-[#0EA5E9] animate-[bounce_2s_infinite_0.5s]">
+                    <g clipPath="url(#clip0_249_3836)">
+                      <path d="M20.5724 17.2054L6.4431 24.0634L20.5724 30.6622V36L0 26.3782V21.1267L14.3044 14.1824L0 7.49717V2.17664L20.5724 11.7812V17.2054Z" fill="white"/>
+                      <path d="M0 2.17658L5.44512 0L26 9.62188L20.5724 11.7812L0 2.17658Z" fill="#D8D8D8"/>
+                      <path d="M20.5724 17.2053L26 15.0287V9.62183L20.5724 11.7811V17.2053Z" fill="#AFAFAF"/>
+                      <path d="M20.5724 30.6622V20.0038L26 17.5336V33.8234L20.5724 36V30.6622Z" fill="#AFAFAF"/>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_249_3836">
+                        <rect width="26" height="36" fill="white"/>
+                      </clipPath>
+                    </defs>
                   </svg>
                 </div>
                 <div className="mt-8 text-2xl font-bold text-white">Transaction Complete!</div>
