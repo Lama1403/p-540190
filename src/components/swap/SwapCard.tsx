@@ -8,6 +8,7 @@ import { NetworkSelector } from "./NetworkSelector";
 import { StyledButton } from "@/components/ui/styled-button";
 import { useToast } from "@/hooks/use-toast";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { Check } from "lucide-react";
 
 interface SwapCardProps {
   onSwapComplete?: () => void;
@@ -120,8 +121,19 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
         </Tooltip>
       </div>
       
-      <StyledButton variant="primary" onClick={handleSwap}>
-        Swap
+      <StyledButton 
+        variant="primary" 
+        onClick={handleSwap}
+        disabled={isCompleted}
+        className={isCompleted ? "bg-[#00D0C6] border-[#00D0C6] cursor-not-allowed" : ""}
+      >
+        {isCompleted ? (
+          <div className="flex items-center gap-2">
+            <Check className="w-4 h-4" /> Swapped
+          </div>
+        ) : (
+          "Swap"
+        )}
       </StyledButton>
     </StyledCard>
   );
