@@ -8,7 +8,7 @@ import { NetworkSelector } from "./NetworkSelector";
 import { StyledButton } from "@/components/ui/styled-button";
 import { useToast } from "@/hooks/use-toast";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import { Star } from "lucide-react";
+import { Check } from "lucide-react";
 
 interface SwapCardProps {
   onSwapComplete?: () => void;
@@ -133,8 +133,8 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
       >
         {isCompleted ? (
           <div className="flex items-center gap-2">
-            <Star className="w-4 h-4 animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]" /> 
-            <span className="animate-fade-in">Swapped Successfully</span>
+            <Check className="w-4 h-4 animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]" /> 
+            <span className="animate-fade-in">Success</span>
           </div>
         ) : (
           "Swap"
@@ -143,4 +143,3 @@ export const SwapCard: React.FC<SwapCardProps> = ({ onSwapComplete, isCompleted 
     </StyledCard>
   );
 };
-
