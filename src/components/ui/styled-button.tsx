@@ -15,7 +15,7 @@ export const StyledButton: React.FC<StyledButtonProps> = ({
   ...props 
 }) => {
   const baseStyles = {
-    primary: "w-[207px] h-[33px] bg-[#173C3F] border border-[#00D0C6] rounded-[127.434px] text-white font-bold text-[15.5071px] leading-[120%] tracking-[-0.03em] capitalize transition-all duration-200 hover:bg-[#00D0C6] hover:border-[#00D0C6] hover:shadow-[0_0_15px_rgba(0,208,198,0.3)] hover:scale-[1.02] active:bg-[#00b8af] active:scale-[0.98] active:shadow-[0_0_8px_rgba(0,208,198,0.2)] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-none",
+    primary: "w-[207px] h-[33px] bg-[#173C3F] border border-[#00D0C6] rounded-[127.434px] text-white font-bold text-[15.5071px] leading-[120%] tracking-[-0.03em] capitalize transition-all duration-200 hover:bg-[#00D0C6] hover:border-[#00D0C6] hover:scale-[1.02] active:bg-[#00b8af] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100",
     max: "w-[60.38px] h-[28.24px] bg-[#2B2970] rounded-[78.5256px] font-['Montserrat'] font-bold text-[10.3036px] leading-[120%] text-[#87A1FF] capitalize transition-colors hover:bg-[#00D0C6] hover:text-white active:bg-[#00b8af]",
     half: "w-[60.38px] h-[28.24px] bg-[#173C3F] rounded-[78.5256px] font-['Montserrat'] font-bold text-[10.3036px] leading-[120%] text-[#00D0C6] capitalize transition-colors hover:bg-[#00D0C6] hover:text-white active:bg-[#00b8af]"
   };
