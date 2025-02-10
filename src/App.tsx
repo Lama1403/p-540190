@@ -11,34 +11,30 @@ import {
   RainbowKitProvider,
   darkTheme,
 } from '@rainbow-me/rainbowkit';
-import { configureChains, createConfig, WagmiConfig } from 'wagmi';
+import { createConfig, WagmiConfig, http } from 'wagmi';
 import { mainnet } from 'wagmi/chains';
-import { publicProvider } from 'wagmi/providers/public';
 import '@rainbow-me/rainbowkit/styles.css';
 
 const queryClient = new QueryClient();
 
-const { chains, publicClient } = configureChains(
-  [mainnet],
-  [publicProvider()]
-);
+const projectId = 'YOUR_PROJECT_ID'; // Replace with your WalletConnect project ID
 
-const { connectors } = getDefaultWallets({
+const { wallets } = getDefaultWallets({
   appName: 'Upgrade App',
-  projectId: 'YOUR_PROJECT_ID', // Replace with your WalletConnect project ID
-  chains
+  projectId,
 });
 
-const wagmiConfig = createConfig({
-  autoConnect: true,
-  connectors,
-  publicClient
+const config = createConfig({
+  chains: [mainnet],
+  transports: {
+    [mainnet.id]: http(),
+  },
+  wallets,
 });
 
 const App = () => (
-  <WagmiConfig config={wagmiConfig}>
+  <WagmiConfig config={config}>
     <RainbowKitProvider 
-      chains={chains} 
       theme={darkTheme({
         accentColor: '#00D0C6',
         borderRadius: 'medium',
