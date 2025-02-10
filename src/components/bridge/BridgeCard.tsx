@@ -1,16 +1,15 @@
 
 import React, { useState } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
+import { StyledButton } from "@/components/ui/styled-button";
 
 export const BridgeCard: React.FC = () => {
   const [amount, setAmount] = useState<string>('');
-  const maxAmount = 1000; // This would typically come from your wallet/balance
+  const maxAmount = 1000;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    // Only allow numbers and decimals
     if (value === '' || /^\d*\.?\d*$/.test(value)) {
       setAmount(value);
     }
@@ -94,28 +93,26 @@ export const BridgeCard: React.FC = () => {
               />
             </div>
             <div className="flex flex-col gap-[11px] h-full justify-center">
-              <button 
+              <StyledButton 
                 onClick={handleMaxClick}
-                className="w-[60.38px] h-[28.24px] bg-[#2B2970] rounded-[78.5256px] font-['Montserrat'] font-bold text-[10.3036px] leading-[120%] text-[#87A1FF] capitalize transition-colors active:bg-[#201f5c] hover:bg-[#252156]"
+                variant="max"
               >
                 Max
-              </button>
-              <button 
+              </StyledButton>
+              <StyledButton 
                 onClick={handleHalfClick}
-                className="w-[60.38px] h-[28.24px] bg-[#173C3F] rounded-[78.5256px] font-['Montserrat'] font-bold text-[10.3036px] leading-[120%] text-[#00D0C6] capitalize transition-colors active:bg-[#122e30] hover:bg-[#153436]"
+                variant="half"
               >
                 Half
-              </button>
+              </StyledButton>
             </div>
           </div>
         </div>
 
         {/* Bridge Button */}
-        <Button 
-          className="w-[207px] h-[33px] bg-[#173C3F] border border-[#00D0C6] rounded-[127.434px] text-white font-bold text-[15.5071px] leading-[120%] tracking-[-0.03em] capitalize transition-colors active:bg-[#122e30] hover:bg-[#153436]"
-        >
+        <StyledButton variant="primary">
           Bridge
-        </Button>
+        </StyledButton>
       </CardContent>
     </Card>
   );

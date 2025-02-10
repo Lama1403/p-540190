@@ -1,11 +1,11 @@
 
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { SwapHeader } from "./SwapHeader";
 import { WalletInfo } from "./WalletInfo";
 import { TokenSelector } from "./TokenSelector";
 import { NetworkSelector } from "./NetworkSelector";
+import { StyledButton } from "@/components/ui/styled-button";
 
 export const SwapCard: React.FC = () => {
   return (
@@ -34,11 +34,9 @@ export const SwapCard: React.FC = () => {
           />
         </div>
         
-        <Button 
-          className="w-[207px] h-[33px] bg-[#173C3F] border border-[#00D0C6] rounded-[127.434px] text-white font-bold text-[15.5071px] leading-[120%] tracking-[-0.03em] capitalize transition-colors hover:bg-[#00D0C6] active:bg-[#00b8af]"
-        >
+        <StyledButton variant="primary">
           Swap
-        </Button>
+        </StyledButton>
       </CardContent>
     </Card>
   );
