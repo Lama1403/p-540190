@@ -41,7 +41,7 @@ export const InfoContainer: React.FC<InfoContainerProps> = ({
       </div>
 
       {centerIcon && (
-        <div className="flex flex-col justify-center items-center w-full max-w-[30px] h-[54px]">
+        <div className="absolute left-1/2 transform -translate-x-1/2 flex justify-center items-center w-[30px]">
           {centerIcon}
         </div>
       )}
