@@ -57,7 +57,7 @@ const Index = () => {
       >
         <PageHeader 
           title="Upgrade your ZILs"
-          description="A simple 2 step process."
+          description="A simple 2 step process to bridge your ERC-20 ZIL to Zilliqa."
           className={isBridgeCompleted ? "backdrop-blur-sm bg-white/5" : ""}
         />
         <div className={`flex items-center justify-center gap-8 flex-wrap w-full ${isBridgeCompleted ? "backdrop-blur-sm bg-white/5" : ""}`}>
